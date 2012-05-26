@@ -1,4 +1,4 @@
-package entity; 
+package controleEstoque; 
 
 public enum Permissao {
 

@@ -1,7 +1,4 @@
-package boundary;
-import entity.Login;
-//import control.ControlLogin;
-
+package controleEstoque;
 import javax.swing.JOptionPane;
 
 /*
@@ -19,6 +16,9 @@ public class FormLogin extends javax.swing.JFrame {
      * Creates new form FormLogin
      */
     private Login login;
+    private ControlLogin controlLogin;
+    private boolean autenticado;
+    
     //private ControlLogin controlLogin = new ControlLogin();
     
     public FormLogin() {
@@ -36,6 +36,7 @@ public class FormLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
         btnLogin = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
         txtUsuario = new javax.swing.JTextField();
@@ -44,6 +45,19 @@ public class FormLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
+
+        jInternalFrame1.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,8 +147,13 @@ public class FormLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairMouseClicked
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
+       login = new Login();
+       login.setUsuario(txtUsuario.getText());
+       login.setSenha(txtSenha.getText());  
        
-       
+       controlLogin = new ControlLogin();
+       autenticado = controlLogin.validaAcesso(login);  
+       chamaMenuPrincipal();
     }//GEN-LAST:event_btnLoginMouseClicked
 
     private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyPressed
@@ -145,6 +164,10 @@ public class FormLogin extends javax.swing.JFrame {
       
     }//GEN-LAST:event_txtSenhaKeyPressed
 
+    private void chamaMenuPrincipal(){
+         ControlMain controlMain = new ControlMain();
+         controlMain.criaMenuPrincipal(this, this.autenticado);       
+    }
   
     
     
@@ -192,6 +215,7 @@ public class FormLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSair;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
