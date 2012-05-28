@@ -8,14 +8,14 @@ import java.util.Date;
  */
 public class EntradaProduto {
     private Date data;
-    private String fornecedor;
+    private Fornecedor fornecedor;
     private String notaFiscal;
 
     public EntradaProduto() {
         
     }
     
-    public EntradaProduto(Date data, String fornecedor, String notaFiscal){
+    public EntradaProduto(Date data, Fornecedor fornecedor, String notaFiscal){
         this.data = data;
         this.fornecedor = fornecedor;
         this.notaFiscal = notaFiscal;
@@ -29,11 +29,11 @@ public class EntradaProduto {
         this.data = data;
     }
 
-    public String getFornecedor() {
+    public Fornecedor getFornecedor() {
         return fornecedor;
     }
 
-    public void setFornecedor(String fornecedor) {
+    public void setFornecedor(Fornecedor fornecedor) {
         this.fornecedor = fornecedor;
     }
 
@@ -52,6 +52,13 @@ public class EntradaProduto {
     public void registrarEntrada(){
         
     }
+
+    
+    @Override
+    public String toString() {
+        return data.toString() + "\n" + fornecedor.toString() + notaFiscal + "\n";
+    }
+    
     
     
     

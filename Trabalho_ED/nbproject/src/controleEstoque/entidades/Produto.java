@@ -9,8 +9,7 @@ import controleEstoque.estruturaDados.ListaProdutos;
 public class Produto {
     
     private Fornecedor fornecedor;
-    private ListaProdutos produtosIndicados = new ListaProdutos();
-    
+    private ListaProdutos produtosIndicados = new ListaProdutos();    
     private int id;
     private String nome;
     private String descricao;
@@ -94,6 +93,46 @@ public class Produto {
     
     public void indicarProduto(String nome, String fornecedor){
         produtosIndicados.adiciona(new Produto(nome, fornecedor));
+    }
+
+    public EntradaProduto getEntradaProduto() {
+        return entradaProduto;
+    }
+
+    public void setEntradaProduto(EntradaProduto entradaProduto) {
+        this.entradaProduto = entradaProduto;
+    }
+
+    public Fornecedor getFornecedor() {
+        return fornecedor;
+    }
+
+    public void setFornecedor(Fornecedor fornecedor) {
+        this.fornecedor = fornecedor;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public ListaProdutos getProdutosIndicados() {
+        return produtosIndicados;
+    }
+
+    public void setProdutosIndicados(ListaProdutos produtosIndicados) {
+        this.produtosIndicados = produtosIndicados;
+    }
+
+    public SaidaProduto getSaidaProduto() {
+        return saidaProduto;
+    }
+
+    public void setSaidaProduto(SaidaProduto saidaProduto) {
+        this.saidaProduto = saidaProduto;
     }
 
     @Override

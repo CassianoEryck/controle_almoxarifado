@@ -1,0 +1,18 @@
+---------- Relatório Fornecedor ----------
+Produto: lol
+---------- Fornecedores ------------------
+Nome: Zé0
+Telefone: null
+
+Nome: Zé1
+Telefone: null
+
+Nome: Zé2
+Telefone: null
+
+Nome: Zé3
+Telefone: null
+
+-----------------------------------------
+Total: 5
+Data: 28/15/2012

@@ -46,6 +46,20 @@ public class Fornecedor {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    
+    /**
+     * Retornar o fornecedor como uma String
+     * @param listaProdutos se true, vai retornar todos os arquivos da lista.
+     * @return 
+     */
+    public String toString(boolean listaProdutos) {
+        if (listaProdutos)
+            return nome.toString() + "\n" + telefone.toString() + "\n" + this.produtos.percorreLista();
+        else
+            return nome.toString() + "\n" + telefone.toString() + "\n";
+        
+    }
     
     
     
