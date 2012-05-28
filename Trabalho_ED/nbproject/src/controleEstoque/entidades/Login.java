@@ -29,6 +29,10 @@ public class Login {
         this.usuario = usuario;
     }
     
+    public boolean validaAcesso(String usuario, String senha){
+        return true;
+    }
+    
    
     
        
