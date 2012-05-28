@@ -1,4 +1,4 @@
-package controleEstoque;
+package controleEstoque.entidades;
 
 public class Login {
     private String usuario;

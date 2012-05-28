@@ -1,4 +1,4 @@
-package controleEstoque;
+package controleEstoque.entidades;
 /**
  * @author Eduardo Lacerda
  * Data: May 26, 2012

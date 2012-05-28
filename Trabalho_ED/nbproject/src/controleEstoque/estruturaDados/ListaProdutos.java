@@ -1,5 +1,5 @@
 package controleEstoque.estruturaDados;
-import controleEstoque.Produto;
+import controleEstoque.entidades.Produto;
 /**
  * @author Eduardo Lacerda
  * Data: May 28, 2012
@@ -25,9 +25,7 @@ public class ListaProdutos {
         }
     }
     
-    public Produto remove(){
-        Produto produto = new Produto();
-        
+    public Produto remove(Produto produto){
         return produto;
     }
 

@@ -1,5 +1,5 @@
 package controleEstoque;
-
+import controleEstoque.controladores.ControlMain;
 /**
  * @author Eduardo Lacerda
  * Data: May 26, 2012

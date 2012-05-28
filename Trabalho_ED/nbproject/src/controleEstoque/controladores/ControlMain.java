@@ -1,5 +1,8 @@
-package controleEstoque;
+package controleEstoque.controladores;
 
+
+
+import controleEstoque.FormMenuPrincipal;
 import controleEstoque.formularios.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;

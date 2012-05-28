@@ -1,4 +1,9 @@
-package controleEstoque;
+package controleEstoque.controladores;
+
+import controleEstoque.entidades.Login;
+
+
+
 
 /*
  * To change this template, choose Tools | Templates

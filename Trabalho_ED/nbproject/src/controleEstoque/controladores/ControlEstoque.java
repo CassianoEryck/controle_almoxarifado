@@ -1,4 +1,6 @@
-package controleEstoque;
+package controleEstoque.controladores;
+import controleEstoque.entidades.*;
+
 /**
  * @author Eduardo Lacerda
  * Data: May 26, 2012

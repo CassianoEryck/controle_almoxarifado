@@ -1,7 +1,6 @@
 package controleEstoque.formularios;
-import controleEstoque.ControlLogin;
-import controleEstoque.ControlMain;
-import controleEstoque.Login;
+import controleEstoque.controladores.*;
+import controleEstoque.entidades.Login;
 import javax.swing.JOptionPane;
 
 /*
