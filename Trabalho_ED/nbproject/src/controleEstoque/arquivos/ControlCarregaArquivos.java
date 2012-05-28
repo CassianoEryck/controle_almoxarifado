@@ -113,4 +113,24 @@ public class ControlCarregaArquivos {
         return lista;
     }
     
+    public String retornaStringArquivo(String arquivo){
+        String strReader = "", strFinal = "";        
+        try{
+            BufferedReader bufReader = new BufferedReader(new FileReader(arquivo));
+            
+            strReader = bufReader.readLine();            
+            while(strReader != null){
+                strFinal += strReader + "\n";
+                strReader = bufReader.readLine();
+            }
+            
+            bufReader.close();
+        }catch (Exception e){
+            strReader = "";
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        
+        return strFinal;
+    }
+    
 }

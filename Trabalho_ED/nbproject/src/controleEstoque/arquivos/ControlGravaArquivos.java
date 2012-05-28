@@ -1,8 +1,8 @@
 package controleEstoque.arquivos;
 
-import controleEstoque.entidades.Estatisticas;
-import controleEstoque.entidades.Estoque;
+import controleEstoque.entidades.EntradaProduto;
 import controleEstoque.entidades.Produto;
+import controleEstoque.entidades.SaidaProduto;
 import controleEstoque.estruturaDados.ListaProdutos;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -18,8 +18,11 @@ import javax.swing.JOptionPane;
  * Data: May 29, 2012
  */
 public class ControlGravaArquivos {
+    static ControlCarregaArquivos controlCarregaArquivos;
 
     File file;
+    EntradaProduto entradaProduto;
+    SaidaProduto saidaProduto;
     
     /**
      * Construtor da classe ControlArquivosTexto
@@ -41,13 +44,68 @@ public class ControlGravaArquivos {
     }
     
     /**
+     * Cria um arquivo com a entrada de um produto
+     * @param entradaProduto Classe EntradaProduto para registrar uma entrada de um produto
+     * @param id Id do produto correspondente a saida
+     */
+    public ControlGravaArquivos(EntradaProduto entradaProduto, int id) {
+        this.file = new File("entradaProduto" + Integer.toString(id) + ".txt");  
+        this.entradaProduto = entradaProduto;
+        gravaRegistroProduto(entradaProduto);
+    }
+    
+     /**
+     * Cria um arquivo com a entrada de um produto
+     * @param saidaProduto Classe SaidaProduto para registrar uma saida de um produto
+     * @param id Id do produto correspondente a saida
+     */
+    public ControlGravaArquivos(SaidaProduto saidaProduto, int id) {
+        this.file = new File("entradaProduto" + Integer.toString(id) + ".txt");  
+        this.saidaProduto = saidaProduto;
+        gravaRegistroProduto(saidaProduto);
+    }
+    
+    public void gravaRegistroProduto(EntradaProduto entradaProduto){
+        String strAnterior = "";
+        if(!file.exists())
+            strAnterior = controlCarregaArquivos.retornaStringArquivo(file.getPath());            
+        gravaRegistroProduto(strAnterior);
+    }
+    
+    public void gravaRegistroProduto(SaidaProduto saidaProduto){
+        String strAnterior = "";
+        if(!file.exists())
+            strAnterior = controlCarregaArquivos.retornaStringArquivo(file.getPath());            
+        gravaRegistroProduto(strAnterior);
+    }
+    
+    private void gravaRegistroProduto(String arquivoAnterior){
+        String arquivo = "";
+        if(arquivoAnterior != null){
+            arquivo = arquivoAnterior;
+        }
+        
+        arquivo += this.entradaProduto.toString();
+        
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            writer.write(arquivo);
+            writer.close();
+        } catch (IOException ex) {
+            Logger.getLogger(ControlGravaArquivos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+        
+    }
+    
+    
+    
+    /**
      * Através de uma Lista de Produtos, será armazenada uma lista.
      * @param produtos Lista com todos os produtos do Sistema.
      */
     public void criaArquivoProduto(ListaProdutos produtos){       
-       Produto produto;
-       Estoque estoque;
-       Estatisticas estatistica;
+       Produto produto;     
        
        try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
