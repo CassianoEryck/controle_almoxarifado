@@ -1,7 +1,6 @@
 package controleEstoque;
 
-
-import controleEstoque.FormLogin;
+import controleEstoque.formularios.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -27,6 +26,16 @@ public class ControlMain {
             System.exit(0);
         }
             
+    }
+    
+    public void criaFormManterProdutos(){
+        
+    }
+    
+    public void criaFormManterEstoque(JFrame jframe){
+        FrmManterEstoque frmManterEstoque = new FrmManterEstoque();
+        frmManterEstoque.setVisible(true);
+        frmManterEstoque.setLocationRelativeTo(null);        
     }
 
 }

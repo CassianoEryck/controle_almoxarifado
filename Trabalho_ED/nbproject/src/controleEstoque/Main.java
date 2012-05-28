@@ -4,8 +4,6 @@ package controleEstoque;
  * @author Eduardo Lacerda
  * Data: May 26, 2012
  */
-import controleEstoque.FormLogin;
-import javax.swing.JFrame;
 
 /**
  * 

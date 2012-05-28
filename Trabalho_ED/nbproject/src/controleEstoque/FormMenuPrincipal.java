@@ -33,21 +33,71 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        menuManterProduto = new javax.swing.JMenuItem();
+        menuAjustarEstoque = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jMenu3.setText("Estoque");
+
+        menuManterProduto.setText("Manter Cadastro");
+        menuManterProduto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuManterProdutoMouseClicked(evt);
+            }
+        });
+        menuManterProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuManterProdutoActionPerformed(evt);
+            }
+        });
+        jMenu3.add(menuManterProduto);
+
+        menuAjustarEstoque.setText("Ajustar Estoque");
+        menuAjustarEstoque.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuAjustarEstoqueMouseClicked(evt);
+            }
+        });
+        jMenu3.add(menuAjustarEstoque);
+
+        jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("Edit");
+        jMenuBar2.add(jMenu4);
+
+        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 612, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 277, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuManterProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuManterProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuManterProdutoActionPerformed
+
+    private void menuManterProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuManterProdutoMouseClicked
+      
+    }//GEN-LAST:event_menuManterProdutoMouseClicked
+
+    private void menuAjustarEstoqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAjustarEstoqueMouseClicked
+          // TODO add your handling code here:
+        ControlMain main = new ControlMain();
+        main.criaFormManterEstoque(this);
+    }//GEN-LAST:event_menuAjustarEstoqueMouseClicked
 
     /**
      * @param args the command line arguments
@@ -91,5 +141,10 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem menuAjustarEstoque;
+    private javax.swing.JMenuItem menuManterProduto;
     // End of variables declaration//GEN-END:variables
 }
