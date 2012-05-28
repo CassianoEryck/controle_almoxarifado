@@ -101,7 +101,7 @@ public class ControlGravaArquivos {
     
     
     /**
-     * Através de uma Lista de Produtos, será armazenada uma lista.
+     * Através de uma Lista de Produtos, será armazenada em um arquivo.
      * @param produtos Lista com todos os produtos do Sistema.
      */
     public void criaArquivoProduto(ListaProdutos produtos){       

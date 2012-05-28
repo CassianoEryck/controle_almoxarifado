@@ -13,10 +13,11 @@ import java.util.Date;
 public class ControlRelatorios {    
    
     /**
-     * 
-     * @param produto
-     * @param listaFornecedor
-     * @return 
+     * A partir de um determinado produto e de uma lista de fornecedores é gerado um relatório dos Fornecedores
+     * por este produto.
+     * @param produto produto especifico
+     * @param listaFornecedor lista de fornecedores do produto
+     * @return O local do arquivo de texto
      */
     public String geraRelatorioFornecedor(Produto produto, ListaFornecedor listaFornecedor ){
         File file = new File(produto.getNome() + ".txt");               
