@@ -5,4 +5,5 @@ package controleEstoque.controladores;
  */
 public class ControlFuncionario {
 
+    
 }

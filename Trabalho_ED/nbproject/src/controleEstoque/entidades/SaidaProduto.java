@@ -35,10 +35,21 @@ public class SaidaProduto {
         this.quantidade = quantidade;
     }
     
+    /**
+     * 
+     * @param periodo
+     * @return 
+     */
+    
     public int obtemQuantidadeSaidas(int periodo){
         return 0;
     }
     
+    /**
+     * Este método é usado para registrar a saída de um produtom
+     * @param quantidade
+     * @param funcionario 
+     */
     public void registraSaida(int quantidade, Funcionario funcionario){
         
     }
