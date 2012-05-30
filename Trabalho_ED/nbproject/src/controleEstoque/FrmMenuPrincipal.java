@@ -11,6 +11,7 @@ import javax.swing.*;
 
 /**
  *
+ * 
  * @author Christopher
  */
 public class FrmMenuPrincipal extends javax.swing.JFrame {
@@ -101,6 +102,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaidaActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+
         
         if(JOptionPane.showConfirmDialog(this, "Deseja realmente efetuar logout?", 
                 "Aviso!", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
