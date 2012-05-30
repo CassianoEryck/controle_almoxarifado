@@ -4,12 +4,18 @@
  */
 package controleEstoque;
 
+import controleEstoque.controladores.*;
+import javax.swing.*;
+
+
+
 /**
  *
  * @author Christopher
  */
 public class FrmMenuPrincipal extends javax.swing.JFrame {
 
+    ControlMain controlMain = new ControlMain();
     /**
      * Creates new form FrmMenuPrincipal
      */
@@ -28,12 +34,12 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
         jSeparator1 = new javax.swing.JSeparator();
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        btnRelatorio = new javax.swing.JButton();
-        btnProdutos = new javax.swing.JButton();
-        btnFornecedores = new javax.swing.JButton();
-        btnEntrada = new javax.swing.JButton();
-        btnSaida = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        btnFornecedores = new javax.swing.JButton();
+        btnRelatorio = new javax.swing.JButton();
+        btnEntrada = new javax.swing.JButton();
+        btnProdutos = new javax.swing.JButton();
+        btnSaida = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Controle de Estoque");
@@ -53,31 +59,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         getContentPane().add(jDesktopPane1);
         jDesktopPane1.setBounds(200, 0, 730, 380);
 
-        btnRelatorio.setText("Gerar relatório");
-        getContentPane().add(btnRelatorio);
-        btnRelatorio.setBounds(10, 250, 180, 23);
-
-        btnProdutos.setText("Lista de produtos");
-        btnProdutos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProdutosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnProdutos);
-        btnProdutos.setBounds(10, 40, 180, 23);
-
-        btnFornecedores.setText("Lista de fornecedores");
-        getContentPane().add(btnFornecedores);
-        btnFornecedores.setBounds(10, 80, 180, 23);
-
-        btnEntrada.setText("Registrar entrada");
-        getContentPane().add(btnEntrada);
-        btnEntrada.setBounds(10, 150, 180, 23);
-
-        btnSaida.setText("Registrar saída");
-        getContentPane().add(btnSaida);
-        btnSaida.setBounds(10, 190, 180, 23);
-
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,17 +66,49 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnLogout);
-        btnLogout.setBounds(40, 320, 110, 23);
+        btnLogout.setBounds(40, 310, 110, 23);
+
+        btnFornecedores.setText("Lista de fornecedores");
+        getContentPane().add(btnFornecedores);
+        btnFornecedores.setBounds(10, 70, 180, 23);
+
+        btnRelatorio.setText("Gerar relatório");
+        getContentPane().add(btnRelatorio);
+        btnRelatorio.setBounds(10, 240, 180, 23);
+
+        btnEntrada.setText("Registrar entrada");
+        getContentPane().add(btnEntrada);
+        btnEntrada.setBounds(10, 140, 180, 23);
+
+        btnProdutos.setText("Lista de produtos");
+        getContentPane().add(btnProdutos);
+        btnProdutos.setBounds(10, 30, 180, 23);
+
+        btnSaida.setText("Registrar saída");
+        btnSaida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaidaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSaida);
+        btnSaida.setBounds(10, 180, 180, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnProdutosActionPerformed
+    private void btnSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaidaActionPerformed
+        controlMain.chamaRegistrarSaida(this);
+    }//GEN-LAST:event_btnSaidaActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        // TODO add your handling code here:
+        
+        if(JOptionPane.showConfirmDialog(this, "Deseja realmente efetuar logout?", 
+                "Aviso!", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+           
+            this.dispose();
+            controlMain.criaFormularioLogin();
+        }
+        
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
@@ -139,6 +152,10 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
     }
+    
+   public JDesktopPane getJDesktopPane() {
+       return jDesktopPane1;
+   }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEntrada;
     private javax.swing.JButton btnFornecedores;

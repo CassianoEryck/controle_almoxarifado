@@ -27,10 +27,22 @@ public class ControlMain {
             JOptionPane.showMessageDialog(frmLogin, "Usuário ou senha inválidos!", "Erro",
                     JOptionPane.ERROR_MESSAGE);
             System.exit(0);
-        
         }
-            
+    
     }
     
+     public void chamaRegistrarSaida(FrmMenuPrincipal menu) {
+         FrmRegistrarSaida saida = new FrmRegistrarSaida();
+         
+         menu.getJDesktopPane().add(saida);
+         
+         saida.setVisible(true);
+         
+         saida.setSize(menu.getJDesktopPane().getWidth(),
+                 menu.getJDesktopPane().getHeight());
+         
+      }   
+     
+   
 
 }

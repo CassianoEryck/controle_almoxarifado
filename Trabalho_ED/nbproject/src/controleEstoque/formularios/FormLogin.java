@@ -128,6 +128,7 @@ public class FormLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(JOptionPane.showConfirmDialog(this, "Deseja realmente sair?", "Aviso!", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
             this.dispose();
+            System.exit(0);
         }
     }//GEN-LAST:event_btnSairMouseClicked
 
