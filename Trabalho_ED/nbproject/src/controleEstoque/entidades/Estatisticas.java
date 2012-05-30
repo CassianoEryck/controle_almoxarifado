@@ -12,6 +12,29 @@ public class Estatisticas {
     private int estoqueMinimo;
     private int estoqueMaximo;
 
+    public Estatisticas() {
+        vendaMediaMensal = 0.00;
+        tempoCobertura = 0.00;
+        estoqueMinimo = 0;
+        estoqueMaximo = 0;
+    }
+
+    public Estatisticas(double vendaMediaMensal, double tempoCobertura, int estoqueMinimo, int estoqueMaximo) {
+        this.vendaMediaMensal = vendaMediaMensal;
+        this.tempoCobertura = tempoCobertura;
+        this.estoqueMinimo = estoqueMinimo;
+        this.estoqueMaximo = estoqueMaximo;
+    }
+    
+    public Estatisticas(double vendaMediaMensal, double tempoCobertura){
+        this.vendaMediaMensal = vendaMediaMensal;
+        this.tempoCobertura = tempoCobertura;
+        calculaEstoqueMinimo();
+        calculaEstoqueMaximo();
+    }
+    
+    
+
     public int getEstoqueMaximo() {
         return estoqueMaximo;
     }

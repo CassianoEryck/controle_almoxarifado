@@ -5,16 +5,26 @@ package controleEstoque.entidades;
  */
 public class Produto {
     
-    int id;
-    String descricao;
-    double valorUnitario;
+    private int id;
+    private String descricao;
+    private double valorUnitario;
     private Estoque estoque = new Estoque();
-    
-    
-    
 
     public Produto() {
+        this.id = 0;
+        this.descricao = "";
+        this.valorUnitario = 0.00;
+        this.estoque = new Estoque();
     }
+
+    public Produto(int id, String descricao, double valorUnitario, Estoque estoque) {
+        this.id = id;
+        this.descricao = descricao;
+        this.valorUnitario = valorUnitario;
+        this.estoque = estoque;
+    }
+    
+    
 
     public String getDescricao() {
         return descricao;
@@ -39,6 +49,14 @@ public class Produto {
     public void setValorUnitario(double valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
+
+    public Estoque getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(Estoque estoque) {
+        this.estoque = estoque;
+    }
     
     public void cadastrarProduto(){
        
@@ -55,5 +73,12 @@ public class Produto {
     public void indicarProduto(){
         
     }
+
+    @Override
+    public String toString() {
+        return id + "\n" + descricao + "\n" + valorUnitario + "\n";
+    }
+    
+    
 
 }
