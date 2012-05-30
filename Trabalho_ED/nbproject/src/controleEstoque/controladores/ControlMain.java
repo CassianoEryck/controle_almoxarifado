@@ -1,8 +1,6 @@
 package controleEstoque.controladores;
 
-
-
-import controleEstoque.FormMenuPrincipal;
+import controleEstoque.FrmMenuPrincipal;
 import controleEstoque.formularios.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -13,7 +11,7 @@ import javax.swing.JOptionPane;
  */
 public class ControlMain {
     
-    FormLogin frmLogin = new FormLogin();   
+   public FormLogin frmLogin = new FormLogin();   
     
     public void criaFormularioLogin(){
         frmLogin.setVisible(true);
@@ -23,22 +21,16 @@ public class ControlMain {
     public void criaMenuPrincipal(FormLogin frmLogin, boolean autenticado){
         if(autenticado){
             frmLogin.dispose();
-            new FormMenuPrincipal();
+          FrmMenuPrincipal menu = new FrmMenuPrincipal();
+          menu.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(frmLogin, "Você não está autenticado, o programa irá ser encerrado.");
+            JOptionPane.showMessageDialog(frmLogin, "Usuário ou senha inválidos!", "Erro",
+                    JOptionPane.ERROR_MESSAGE);
             System.exit(0);
+        
         }
             
     }
     
-    public void criaFormManterProdutos(){
-        
-    }
-    
-    public void criaFormManterEstoque(JFrame jframe){
-        FrmManterEstoque frmManterEstoque = new FrmManterEstoque();
-        frmManterEstoque.setVisible(true);
-        frmManterEstoque.setLocationRelativeTo(null);        
-    }
 
 }

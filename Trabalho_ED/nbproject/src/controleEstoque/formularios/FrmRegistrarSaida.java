@@ -27,26 +27,37 @@ public class FrmRegistrarSaida extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabProdutosSaida = new javax.swing.JTable();
         btnDesmarcarTodos = new javax.swing.JButton();
         btnMarcarTodos = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnListaProdutos = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabProdutos = new javax.swing.JTable();
 
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Registrar saída");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(210, 10, 130, 25);
+        jLabel1.setBounds(220, 10, 130, 25);
 
-        tabProdutosSaida.setAutoCreateColumnsFromModel(false);
-        tabProdutosSaida.setModel(new javax.swing.table.DefaultTableModel(
+        btnDesmarcarTodos.setText("Desmarcar todos produtos");
+        getContentPane().add(btnDesmarcarTodos);
+        btnDesmarcarTodos.setBounds(30, 250, 170, 23);
+
+        btnMarcarTodos.setText("Marcar todos produtos");
+        getContentPane().add(btnMarcarTodos);
+        btnMarcarTodos.setBounds(30, 210, 170, 23);
+
+        btnListaProdutos.setText("Ir para lista de produtos selecionados");
+        getContentPane().add(btnListaProdutos);
+        btnListaProdutos.setBounds(310, 240, 240, 23);
+
+        tabProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null}
             },
             new String [] {
-                "", "Produto", "Quantidade"
+                "", "Produto", "Qtd. atual"
             }
         ) {
             Class[] types = new Class [] {
@@ -64,37 +75,24 @@ public class FrmRegistrarSaida extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        tabProdutosSaida.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tabProdutosSaida);
-        tabProdutosSaida.getColumnModel().getColumn(0).setResizable(false);
-        tabProdutosSaida.getColumnModel().getColumn(0).setPreferredWidth(1);
-        tabProdutosSaida.getColumnModel().getColumn(1).setPreferredWidth(15);
-        tabProdutosSaida.getColumnModel().getColumn(2).setResizable(false);
-        tabProdutosSaida.getColumnModel().getColumn(2).setPreferredWidth(1);
+        tabProdutos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tabProdutos);
+        tabProdutos.getColumnModel().getColumn(0).setResizable(false);
+        tabProdutos.getColumnModel().getColumn(0).setPreferredWidth(20);
+        tabProdutos.getColumnModel().getColumn(1).setPreferredWidth(550);
+        tabProdutos.getColumnModel().getColumn(2).setResizable(false);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(12, 50, 540, 140);
-
-        btnDesmarcarTodos.setText("Desmarcar todos produtos");
-        getContentPane().add(btnDesmarcarTodos);
-        btnDesmarcarTodos.setBounds(30, 250, 170, 23);
-
-        btnMarcarTodos.setText("Marcar todos produtos");
-        getContentPane().add(btnMarcarTodos);
-        btnMarcarTodos.setBounds(30, 210, 170, 23);
-
-        jButton1.setText("Ir para lista de produtos selecionados");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(310, 240, 240, 23);
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(20, 50, 530, 150);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDesmarcarTodos;
+    private javax.swing.JButton btnListaProdutos;
     private javax.swing.JButton btnMarcarTodos;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabProdutosSaida;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tabProdutos;
     // End of variables declaration//GEN-END:variables
 }

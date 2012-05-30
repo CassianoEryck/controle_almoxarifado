@@ -37,7 +37,7 @@ public class Funcionario {
         this.nome = nome;
     }
     
-    public Funcionario verificaDados(String usuario, String senha){
+    public Funcionario verificaDados(String usuario, char[] senha){
         login = new Login();
         login.setUsuario(usuario);
         login.setSenha(senha);

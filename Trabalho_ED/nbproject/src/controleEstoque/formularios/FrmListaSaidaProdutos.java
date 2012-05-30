@@ -26,8 +26,6 @@ public class FrmListaSaidaProdutos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         txtData = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -35,33 +33,11 @@ public class FrmListaSaidaProdutos extends javax.swing.JFrame {
         txtFuncionario = new javax.swing.JTextField();
         btnRetirarProdutos = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabProdutos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Produto", "Quantidade atual", "Quantidade retirada", "Valor unitário"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getColumn(1).setResizable(false);
-        jTable1.getColumnModel().getColumn(2).setResizable(false);
-        jTable1.getColumnModel().getColumn(3).setResizable(false);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 140, 390, 120);
 
         jLabel1.setText("Funcionário");
         getContentPane().add(jLabel1);
@@ -101,6 +77,40 @@ public class FrmListaSaidaProdutos extends javax.swing.JFrame {
         btnCancelar.setText("Cancelar");
         getContentPane().add(btnCancelar);
         btnCancelar.setBounds(70, 300, 90, 23);
+
+        tabProdutos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null}
+            },
+            new String [] {
+                "Produto", "Qtd. atual", "Qtd. ret.", "Valor unit."
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabProdutos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tabProdutos);
+        tabProdutos.getColumnModel().getColumn(0).setResizable(false);
+        tabProdutos.getColumnModel().getColumn(0).setPreferredWidth(280);
+        tabProdutos.getColumnModel().getColumn(1).setResizable(false);
+        tabProdutos.getColumnModel().getColumn(2).setResizable(false);
+        tabProdutos.getColumnModel().getColumn(3).setResizable(false);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(0, 140, 400, 150);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,8 +170,8 @@ public class FrmListaSaidaProdutos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tabProdutos;
     private javax.swing.JTextField txtData;
     private javax.swing.JTextField txtFuncionario;
     // End of variables declaration//GEN-END:variables
