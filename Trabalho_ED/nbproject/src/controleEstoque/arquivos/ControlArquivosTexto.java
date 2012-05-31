@@ -2,10 +2,12 @@ package controleEstoque.arquivos;
 
 import controleEstoque.entidades.Estatisticas;
 import controleEstoque.entidades.Estoque;
-import controleEstoque.entidades.Funcionario;
 import controleEstoque.entidades.Produto;
 import controleEstoque.estruturaDados.ListaProdutos;
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -58,6 +60,8 @@ public class ControlArquivosTexto {
             
             produtos.setLista(produtos.getLista().getProx());
             }
+            
+            writer.close();
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.toString());            
         }
@@ -73,7 +77,7 @@ public class ControlArquivosTexto {
         }    
     }
     
-    public void escreveNoArquivo(BufferedWriter bufWriter, String textoArquivo){
+    private void escreveNoArquivo(BufferedWriter bufWriter, String textoArquivo){
         try {
             bufWriter.write(textoArquivo);
         } catch (IOException ex) {
