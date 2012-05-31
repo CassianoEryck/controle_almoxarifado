@@ -8,6 +8,8 @@ import javax.swing.JOptionPane;
  * and open the template in the editor.
  */
 
+
+
 /**
  *
  * @author Lacerda
@@ -37,29 +39,12 @@ public class FormLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
         btnLogin = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
         txtUsuario = new javax.swing.JTextField();
         txtSenha = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-
-        jTextField1.setText("jTextField1");
-
-        jInternalFrame1.setVisible(true);
-
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,13 +130,14 @@ public class FormLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(JOptionPane.showConfirmDialog(this, "Deseja realmente sair?", "Aviso!", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
             this.dispose();
+            System.exit(0);
         }
     }//GEN-LAST:event_btnSairMouseClicked
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
        login = new Login();
        login.setUsuario(txtUsuario.getText());
-       login.setSenha(txtSenha.getText());  
+       login.setSenha(txtSenha.getPassword());  
        
        controlLogin = new ControlLogin();
        autenticado = controlLogin.validaAcesso(login);  
@@ -217,10 +203,8 @@ public class FormLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSair;
-    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPasswordField txtSenha;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables

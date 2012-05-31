@@ -2,7 +2,7 @@ package controleEstoque.entidades;
 
 public class Login {
     private String usuario;
-    private String senha;
+    private char[] senha;
     private Permissao permission;
 
     public Permissao getPermission() {
@@ -13,11 +13,11 @@ public class Login {
         this.permission = permission;
     }
 
-    public String getSenha() {
+    public char[] getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(char[] senha) {
         this.senha = senha;
     }
 
