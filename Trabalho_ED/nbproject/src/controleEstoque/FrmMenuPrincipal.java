@@ -9,9 +9,7 @@ import javax.swing.*;
 
 
 
-/**
- *
- * 
+/*
  * @author Christopher
  */
 public class FrmMenuPrincipal extends javax.swing.JFrame {
