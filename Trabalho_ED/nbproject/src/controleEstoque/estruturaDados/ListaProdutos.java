@@ -14,6 +14,7 @@ public class ListaProdutos {
     
     public void adiciona(Produto produto){
         No novo = new No(produto);
+        
         if(inicio == null){
             inicio = novo;
         }else{
@@ -26,18 +27,29 @@ public class ListaProdutos {
     }
     
     public Produto remove(Produto produto){
-        return produto;
+        Produto produtoRetorno = new Produto();
+        
+        No lista = this.inicio;
+        while(lista.getProx() != null){
+            
+            if(lista.getObjeto() == produto){
+                produtoRetorno = produto;
+            }
+            
+            lista.setObjeto(lista.getProx());
+        }
+        
+        
+        return produtoRetorno;
+    }
+    
+    public No getLista(){
+        return inicio;
+    }
+    
+    public void setLista(No lista){
+        this.inicio = lista;
     }
 
 }
 
-class No{
-    Produto produto;
-    No prox;
-    
-    public No(Produto produto){
-        this.produto = produto;
-        prox = null;
-    }
-    
-}

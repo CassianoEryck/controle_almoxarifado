@@ -9,19 +9,25 @@ public class Produto {
     private String descricao;
     private double valorUnitario;
     private Estoque estoque = new Estoque();
+    private EntradaProduto entradaProduto = new EntradaProduto();
+    private SaidaProduto saidaProduto = new SaidaProduto();
 
     public Produto() {
         this.id = 0;
         this.descricao = "";
         this.valorUnitario = 0.00;
         this.estoque = new Estoque();
+        this.saidaProduto = new SaidaProduto();
+        this.entradaProduto = new EntradaProduto();
     }
 
-    public Produto(int id, String descricao, double valorUnitario, Estoque estoque) {
+    public Produto(int id, String descricao, double valorUnitario, Estoque estoque, SaidaProduto saidaProduto, EntradaProduto entradaProduto) {
         this.id = id;
         this.descricao = descricao;
         this.valorUnitario = valorUnitario;
         this.estoque = estoque;
+        this.saidaProduto = saidaProduto;
+        this.entradaProduto = entradaProduto;
     }
     
     
@@ -76,9 +82,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        return id + "\n" + descricao + "\n" + valorUnitario + "\n";
+        return id + "\n" + descricao + "\n" + valorUnitario + "\n" + estoque.toString() + "\n";
     }
-    
-    
-
 }

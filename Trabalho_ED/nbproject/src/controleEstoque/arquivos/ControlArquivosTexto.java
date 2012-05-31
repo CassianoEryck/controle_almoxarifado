@@ -4,7 +4,10 @@ import controleEstoque.entidades.Estatisticas;
 import controleEstoque.entidades.Estoque;
 import controleEstoque.entidades.Funcionario;
 import controleEstoque.entidades.Produto;
+import controleEstoque.estruturaDados.ListaProdutos;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -16,6 +19,11 @@ public class ControlArquivosTexto {
 
     File file;
     
+    /**
+     * Construtor da classe ControlArquivosTexto
+     * @param nomeArquivo selecione o tipo de arquivo (PRODUTO, FUNCIONARIO, LOGIN)
+     * 
+     */
     public ControlArquivosTexto(Arquivo nomeArquivo) {
         switch (nomeArquivo){
             case PRODUTO: 
@@ -30,31 +38,31 @@ public class ControlArquivosTexto {
         }
     }
     
-    public void criaArquivoProduto(Produto produto){
-        if(file.exists()){
-            String arquivoProdutos = carregaArquivo();
-            escreveArquivoProduto(produto, arquivoProdutos);
-        }else{
-            escreveArquivoProduto(produto, "");
+    /**
+     * Através de uma Lista de Produtos, será armazenada uma lista.
+     * @param produtos Lista com todos os produtos do Sistema.
+     */
+    public void criaArquivoProduto(ListaProdutos produtos){       
+       Produto produto;
+       Estoque estoque;
+       Estatisticas estatistica;
+       
+       try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            
+            while(produtos.getLista().getProx() != null){
+           
+            produto = (Produto) produtos.getLista().getObjeto();
+                       
+            escreveNoArquivo(writer, produto.toString());
+            
+            produtos.setLista(produtos.getLista().getProx());
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.toString());            
         }
-    }
-    
-    public String carregaArquivo(){
-        String string = "";
-        String strReader = "";
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-            string = bufferedReader.readLine();            
-            while(string != null){
-                strReader += string + "\n";
-                string = bufferedReader.readLine();                
-            }        
-            bufferedReader.close();
-        }   catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.toString());            
-        }
-        
-        return strReader;
+       
+      
     }
     
     public File leArquivo(){
@@ -62,77 +70,18 @@ public class ControlArquivosTexto {
             return file;
         }else{
             return new File("");
-        }
-                
+        }    
     }
     
-    private void escreveArquivoProduto(Produto produto, String arquivoAnterior){
-            try {                
-                BufferedWriter bufWriter = new BufferedWriter(new FileWriter(file));
-                Estoque estoque = produto.getEstoque();
-                Estatisticas estatistica = estoque.getEstatistica();
-                
-                bufWriter.write(arquivoAnterior);                              
-                bufWriter.write(produto.getId());
-                bufWriter.newLine();
-                bufWriter.write(produto.getDescricao());
-                bufWriter.newLine();
-                bufWriter.write(Double.toString(produto.getValorUnitario()));
-                bufWriter.newLine();
-                bufWriter.write(Integer.toString(estoque.getQuantidade()));
-                bufWriter.newLine();
-                bufWriter.write(Double.toString(estatistica.getVendaMediaMensal()));
-                bufWriter.newLine();
-                bufWriter.write(Double.toString(estatistica.getTempoCobertura()));
-                bufWriter.newLine();
-                bufWriter.write(Integer.toString(estatistica.getEstoqueMinimo()));
-                bufWriter.newLine();
-                bufWriter.write(Integer.toString(estatistica.getEstoqueMaximo()));
-                bufWriter.newLine();
-                
-                bufWriter.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.toString());
+    public void escreveNoArquivo(BufferedWriter bufWriter, String textoArquivo){
+        try {
+            bufWriter.write(textoArquivo);
+        } catch (IOException ex) {
+            Logger.getLogger(ControlArquivosTexto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    private void criaArquivoFuncionario(Funcionario funcionario){
-        if(file.exists()){
-            String arquivoFuncionarios = carregaArquivo();
-            escreveArquivoFuncionario(funcionario, arquivoFuncionarios);
-        }else{
-            escreveArquivoFuncionario(funcionario);
-        }
-    }
-    
-    private void escreveArquivoFuncionario(Funcionario funcionario){
-         try {                
-                BufferedWriter bufWriter = new BufferedWriter(new FileWriter(file));                
-                
-                bufWriter.write(funcionario.getNome());
-                bufWriter.newLine();
-                bufWriter.write(funcionario.getCargo());
-                bufWriter.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.toString());
-        }
-    }
-    
-    private void escreveArquivoFuncionario(Funcionario funcionario, String arquivoAnterior){
-        try {                
-                BufferedWriter bufWriter = new BufferedWriter(new FileWriter(file));                
-                
-                bufWriter.write(arquivoAnterior);                              
-                bufWriter.write(funcionario.getNome());
-                bufWriter.newLine();
-                bufWriter.write(funcionario.getCargo());
-                bufWriter.newLine();
-                
-                bufWriter.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.toString());
-        }
-    }
+   
     
 public enum Arquivo {
     PRODUTO, FUNCIONARIO, LOGIN

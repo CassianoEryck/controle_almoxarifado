@@ -83,6 +83,12 @@ public class Estatisticas {
     public void calculaEstoqueMaximo(){
         
     }
+
+    @Override
+    public String toString() {
+        return vendaMediaMensal + "\n" + tempoCobertura + "\n" + estoqueMinimo + "\n" + estoqueMaximo + "\n";
+    }
+    
     
 
 }

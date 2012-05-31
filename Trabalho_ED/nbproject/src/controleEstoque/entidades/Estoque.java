@@ -58,7 +58,7 @@ public class Estoque {
     @Override
     
     public String toString() {
-        return estatistica + "\n" + quantidade + "\n";
+        return estatistica.toString() + "\n" + quantidade + "\n";
     }
     
     

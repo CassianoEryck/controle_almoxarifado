@@ -54,4 +54,11 @@ public class SaidaProduto {
         
     }
 
+    @Override
+    public String toString() {
+        return funcionario + "\n" + data + "\n";
+    }
+    
+    
+
 }
