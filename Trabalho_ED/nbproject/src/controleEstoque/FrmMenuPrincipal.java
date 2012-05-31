@@ -67,23 +67,23 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnLogout);
-        btnLogout.setBounds(40, 310, 110, 23);
+        btnLogout.setBounds(40, 310, 110, 28);
 
         btnFornecedores.setText("Lista de fornecedores");
         getContentPane().add(btnFornecedores);
-        btnFornecedores.setBounds(10, 70, 180, 23);
+        btnFornecedores.setBounds(10, 70, 180, 28);
 
         btnRelatorio.setText("Gerar relatório");
         getContentPane().add(btnRelatorio);
-        btnRelatorio.setBounds(10, 240, 180, 23);
+        btnRelatorio.setBounds(10, 240, 180, 28);
 
         btnEntrada.setText("Registrar entrada");
         getContentPane().add(btnEntrada);
-        btnEntrada.setBounds(10, 140, 180, 23);
+        btnEntrada.setBounds(10, 140, 180, 28);
 
         btnProdutos.setText("Lista de produtos");
         getContentPane().add(btnProdutos);
-        btnProdutos.setBounds(10, 30, 180, 23);
+        btnProdutos.setBounds(10, 30, 180, 28);
 
         btnSaida.setText("Registrar saída");
         btnSaida.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +92,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSaida);
-        btnSaida.setBounds(10, 180, 180, 23);
+        btnSaida.setBounds(10, 180, 180, 28);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
