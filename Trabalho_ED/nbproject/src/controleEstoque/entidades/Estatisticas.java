@@ -86,7 +86,7 @@ public class Estatisticas {
 
     @Override
     public String toString() {
-        return vendaMediaMensal + "\n" + tempoCobertura + "\n" + estoqueMinimo + "\n" + estoqueMaximo + "\n";
+        return Double.toString(vendaMediaMensal) + "\n" + Double.toString(tempoCobertura) + "\n" + Integer.toString(estoqueMinimo) + "\n" + Integer.toString(estoqueMaximo) + "\n";
     }
     
     

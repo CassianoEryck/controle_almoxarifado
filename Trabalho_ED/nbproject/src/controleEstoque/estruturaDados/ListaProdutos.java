@@ -43,12 +43,57 @@ public class ListaProdutos {
         return produtoRetorno;
     }
     
+    public boolean alteraProduto(Produto produtoAntigo, Produto produtoNovo){
+        boolean alterar = false;
+        
+        No lista = this.inicio;
+        while(lista.getProx() != null){
+            
+            if(lista.getObjeto() == produtoAntigo){
+                alterar = true;
+            }
+            
+            if(!alterar)
+                lista.setObjeto(lista.getProx());
+            else{
+                lista.setObjeto(produtoNovo);
+                break;
+            }
+        }
+        
+        
+        return alterar;
+    }
+    
     public No getLista(){
         return inicio;
     }
     
     public void setLista(No lista){
         this.inicio = lista;
+    }
+    
+    public int count(){
+        int i = 0;
+        No aux = inicio;
+        
+        while(aux != null){
+            i++;
+            aux = aux.getProx();
+        }                    
+        return i;
+    }
+    
+    public String percorreLista(){
+        String lista = "";
+        No aux = inicio;
+        
+        while(aux.getProx() != null){
+            lista += aux.getObjeto().toString();
+            aux = aux.getProx();
+        }
+        
+        return lista;
     }
 
 }
