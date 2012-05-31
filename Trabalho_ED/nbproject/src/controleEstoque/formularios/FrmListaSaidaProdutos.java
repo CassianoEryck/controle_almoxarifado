@@ -37,6 +37,8 @@ public class FrmListaSaidaProdutos extends javax.swing.JInternalFrame {
         tabProdutos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(null);
+        setMinimumSize(new java.awt.Dimension(730, 380));
         getContentPane().setLayout(null);
 
         jLabel1.setText("Funcionário");

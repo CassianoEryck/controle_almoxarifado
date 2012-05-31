@@ -34,26 +34,26 @@ public class FrmRegistrarSaida extends javax.swing.JInternalFrame {
         tabProdutos = new javax.swing.JTable();
 
         setMaximumSize(null);
-        setMinimumSize(new java.awt.Dimension(591, 396));
+        setMinimumSize(new java.awt.Dimension(730, 380));
         setPreferredSize(null);
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Registrar saída");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(220, 10, 130, 25);
+        jLabel1.setBounds(300, 30, 130, 25);
 
         btnDesmarcarTodos.setText("Desmarcar todos produtos");
         getContentPane().add(btnDesmarcarTodos);
-        btnDesmarcarTodos.setBounds(30, 250, 170, 23);
+        btnDesmarcarTodos.setBounds(120, 270, 200, 23);
 
         btnMarcarTodos.setText("Marcar todos produtos");
         getContentPane().add(btnMarcarTodos);
-        btnMarcarTodos.setBounds(30, 210, 170, 23);
+        btnMarcarTodos.setBounds(120, 230, 200, 23);
 
         btnListaProdutos.setText("Ir para lista de produtos selecionados");
         getContentPane().add(btnListaProdutos);
-        btnListaProdutos.setBounds(310, 240, 240, 23);
+        btnListaProdutos.setBounds(400, 270, 250, 23);
 
         tabProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -86,7 +86,7 @@ public class FrmRegistrarSaida extends javax.swing.JInternalFrame {
         tabProdutos.getColumnModel().getColumn(2).setResizable(false);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(20, 50, 530, 150);
+        jScrollPane2.setBounds(110, 70, 530, 150);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

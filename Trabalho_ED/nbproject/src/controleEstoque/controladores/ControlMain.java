@@ -34,15 +34,37 @@ public class ControlMain {
      public void chamaRegistrarSaida(FrmMenuPrincipal menu) {
          FrmRegistrarSaida saida = new FrmRegistrarSaida();
          
+         menu.getJDesktopPane().removeAll();
          menu.getJDesktopPane().add(saida);
-         
-         saida.setVisible(true);
-         
-         saida.setSize(menu.getJDesktopPane().getWidth(),
+         saida.setSize(menu.getJDesktopPane().getWidth(), 
                  menu.getJDesktopPane().getHeight());
          
+         saida.setVisible(true);     
       }   
      
-   
+     public void chamaListaProdutos(FrmMenuPrincipal menu) {
+         FrmListaProduto produto = new FrmListaProduto();
+         
+         menu.getJDesktopPane().removeAll();
+         
+         menu.getJDesktopPane().add(produto);
+         
+         produto.setSize(menu.getJDesktopPane().getWidth(),
+                 menu.getJDesktopPane().getHeight());
+         
+         produto.setVisible(true);
+     }
+     
+     public void chamaListaFornecedores(FrmMenuPrincipal menu) {
+         FrmListaFornecedores fornecedor = new FrmListaFornecedores();
+         
+         menu.getJDesktopPane().removeAll();
+         menu.getJDesktopPane().add(fornecedor);
+         
+         fornecedor.setSize(menu.getJDesktopPane().getWidth(),
+                 menu.getJDesktopPane().getHeight());
+         
+         fornecedor.setVisible(true);
+     }
 
 }

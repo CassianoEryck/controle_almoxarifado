@@ -50,15 +50,15 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(800, 380));
         setName("Controle de Estoque");
         setResizable(false);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(200, 0, 2, 380);
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, -1, 380));
 
         jDesktopPane1.setBackground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(jDesktopPane1);
-        jDesktopPane1.setBounds(200, 0, 730, 380);
+        jDesktopPane1.setMaximumSize(null);
+        jDesktopPane1.setMinimumSize(new java.awt.Dimension(730, 380));
+        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 730, 380));
 
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
@@ -66,24 +66,29 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogout);
-        btnLogout.setBounds(40, 310, 110, 28);
+        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 110, -1));
 
         btnFornecedores.setText("Lista de fornecedores");
-        getContentPane().add(btnFornecedores);
-        btnFornecedores.setBounds(10, 70, 180, 28);
+        btnFornecedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFornecedoresActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnFornecedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 180, -1));
 
         btnRelatorio.setText("Gerar relatório");
-        getContentPane().add(btnRelatorio);
-        btnRelatorio.setBounds(10, 240, 180, 28);
+        getContentPane().add(btnRelatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 180, -1));
 
         btnEntrada.setText("Registrar entrada");
-        getContentPane().add(btnEntrada);
-        btnEntrada.setBounds(10, 140, 180, 28);
+        getContentPane().add(btnEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 180, -1));
 
         btnProdutos.setText("Lista de produtos");
-        getContentPane().add(btnProdutos);
-        btnProdutos.setBounds(10, 30, 180, 28);
+        btnProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProdutosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnProdutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, -1));
 
         btnSaida.setText("Registrar saída");
         btnSaida.addActionListener(new java.awt.event.ActionListener() {
@@ -91,8 +96,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
                 btnSaidaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSaida);
-        btnSaida.setBounds(10, 180, 180, 28);
+        getContentPane().add(btnSaida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 180, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,6 +116,14 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
+        controlMain.chamaListaProdutos(this);
+    }//GEN-LAST:event_btnProdutosActionPerformed
+
+    private void btnFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFornecedoresActionPerformed
+        controlMain.chamaListaFornecedores(this);
+    }//GEN-LAST:event_btnFornecedoresActionPerformed
 
     /**
      * @param args the command line arguments
