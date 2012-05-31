@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author Eduardo Lacerda
  * Data: May 29, 2012
  */
-public class ControlArquivosTexto {
+public class ControlGravaArquivos {
 
     File file;
     
@@ -26,7 +26,7 @@ public class ControlArquivosTexto {
      * @param nomeArquivo selecione o tipo de arquivo (PRODUTO, FUNCIONARIO, LOGIN)
      * 
      */
-    public ControlArquivosTexto(Arquivo nomeArquivo) {
+    public ControlGravaArquivos(Arquivo nomeArquivo) {
         switch (nomeArquivo){
             case PRODUTO: 
                 this.file = new File("produto.txt");
@@ -81,18 +81,9 @@ public class ControlArquivosTexto {
         try {
             bufWriter.write(textoArquivo);
         } catch (IOException ex) {
-            Logger.getLogger(ControlArquivosTexto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControlGravaArquivos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-   
-    
-public enum Arquivo {
-    PRODUTO, FUNCIONARIO, LOGIN
-    
-}      
-    
-
 
 }
 
