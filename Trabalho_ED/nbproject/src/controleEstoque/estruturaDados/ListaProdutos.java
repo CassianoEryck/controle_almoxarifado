@@ -88,7 +88,7 @@ public class ListaProdutos {
         String lista = "";
         No aux = inicio;
         
-        while(aux.getProx() != null){
+        while(aux != null){
             lista += aux.getObjeto().toString();
             aux = aux.getProx();
         }

@@ -5,7 +5,6 @@
 package controleEstoque.estruturaDados;
 
 import controleEstoque.entidades.Produto;
-import java.beans.VetoableChangeListener;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,7 +16,7 @@ public class MergeSort {
     Produto[] produtos;
     
     /**
-     * 
+     * Construtor da classe MergeSort para organizar uma Lista de Produtos
      * @param lista 
      */
     public MergeSort(ListaProdutos lista){
@@ -40,11 +39,19 @@ public class MergeSort {
         
     }
     
+    /**
+     * Ordena e retorna a lista de produtos instanciada anteriormente
+     * @return Lista de produtos organizada
+     */
     public ListaProdutos mergeProdutos(){
         mergeProdutos(0, produtos.length - 1);        
         return reestruturaLista();
     }
     
+    /**
+     * Ordena a lista instanciada a partir do array ordenado.
+     * @return Lista organizada
+     */
     private ListaProdutos reestruturaLista(){
         ListaProdutos lista = new ListaProdutos();
         for(int i = 0; i < produtos.length; i++){
@@ -54,6 +61,11 @@ public class MergeSort {
         return lista;
     }
    
+    /**
+     * Recursiva que organiza o array ainda não ordenado.
+     * @param inicio primeiro indice do array (use 0)
+     * @param fim  ultimo indice do array (use array.lenght - 1)
+     */
     private void mergeProdutos(int inicio, int fim){
         if(inicio < fim){
             int meio = (inicio + fim)/2;
@@ -63,10 +75,15 @@ public class MergeSort {
         }       
     }
     
+    /**
+     * Ordena e passa para o array da classe
+     * @param inicio
+     * @param meio
+     * @param fim 
+     */
     private void mesclaProduto(int inicio, int meio, int fim){
         int i1 = inicio, f1 = meio, i2 = meio+1, f2 = fim;
-        int iaux = inicio;
-        
+        int iaux = inicio;        
               
         Produto aux[] = new Produto[produtos.length];
         while(i1 <= f1 && i2 <= f2){
@@ -90,5 +107,7 @@ public class MergeSort {
     }
     
     
+    
+   
     
 }
