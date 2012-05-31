@@ -35,13 +35,28 @@ public class ControlMain {
          FrmRegistrarSaida saida = new FrmRegistrarSaida();
          
          menu.getJDesktopPane().removeAll();
+         
          menu.getJDesktopPane().add(saida);
+         
          saida.setSize(menu.getJDesktopPane().getWidth(), 
                  menu.getJDesktopPane().getHeight());
          
          saida.setVisible(true);     
       }   
-     
+
+        public void criaListaRegistrarSaida () {
+        FrmListaSaidaProdutos listaSaida = new FrmListaSaidaProdutos();
+        
+        listaSaida.setVisible(true);
+    
+       }
+        
+        public void criaIndicarProduto () {
+            frmIndicarCompra indicarProduto = new frmIndicarCompra();
+            
+            indicarProduto.setVisible(true);
+        }
+
      public void chamaListaProdutos(FrmMenuPrincipal menu) {
          FrmListaProduto produto = new FrmListaProduto();
          
@@ -59,6 +74,7 @@ public class ControlMain {
          FrmListaFornecedores fornecedor = new FrmListaFornecedores();
          
          menu.getJDesktopPane().removeAll();
+       
          menu.getJDesktopPane().add(fornecedor);
          
          fornecedor.setSize(menu.getJDesktopPane().getWidth(),

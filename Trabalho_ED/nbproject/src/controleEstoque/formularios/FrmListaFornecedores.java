@@ -31,6 +31,7 @@ public class FrmListaFornecedores extends javax.swing.JInternalFrame {
         jTable1 = new javax.swing.JTable();
         btnExcluirFornecedores = new javax.swing.JButton();
         btnAdicionarFornecedor = new javax.swing.JButton();
+        txtPesquisar = new javax.swing.JTextField();
 
         setMaximumSize(null);
         setMinimumSize(new java.awt.Dimension(730, 380));
@@ -41,7 +42,7 @@ public class FrmListaFornecedores extends javax.swing.JInternalFrame {
         jLabel1.setText("Fornecedores");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(280, 30, 190, 40);
+        jLabel1.setBounds(300, 20, 120, 40);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -84,13 +85,28 @@ public class FrmListaFornecedores extends javax.swing.JInternalFrame {
         getContentPane().add(btnAdicionarFornecedor);
         btnAdicionarFornecedor.setBounds(480, 270, 200, 23);
 
+        txtPesquisar.setText("Pesquisar fornecedor...");
+        txtPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPesquisarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtPesquisar);
+        txtPesquisar.setBounds(80, 70, 150, 20);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPesquisarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarFornecedor;
     private javax.swing.JButton btnExcluirFornecedores;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField txtPesquisar;
     // End of variables declaration//GEN-END:variables
 }

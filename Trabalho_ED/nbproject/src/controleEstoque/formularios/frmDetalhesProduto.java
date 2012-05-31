@@ -31,7 +31,6 @@ public class frmDetalhesProduto extends javax.swing.JFrame {
         txtID = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtNotaFiscal = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -48,6 +47,7 @@ public class frmDetalhesProduto extends javax.swing.JFrame {
         pnEstatisticas = new javax.swing.JTextPane();
         jLabel8 = new javax.swing.JLabel();
         txtQtdEstoque = new javax.swing.JTextField();
+        cboNotaFiscal = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,13 +60,6 @@ public class frmDetalhesProduto extends javax.swing.JFrame {
         jLabel1.setText("ID");
 
         jLabel3.setText("Nota Fiscal");
-
-        txtNotaFiscal.setEditable(false);
-        txtNotaFiscal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNotaFiscalActionPerformed(evt);
-            }
-        });
 
         jLabel4.setText("Nome");
 
@@ -105,7 +98,7 @@ public class frmDetalhesProduto extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setText("Estatisticas");
+        jLabel7.setText("Estatísticas");
 
         pnEstatisticas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jScrollPane2.setViewportView(pnEstatisticas);
@@ -113,6 +106,8 @@ public class frmDetalhesProduto extends javax.swing.JFrame {
         jLabel8.setText("Quantidade em estoque");
 
         txtQtdEstoque.setEditable(false);
+
+        cboNotaFiscal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,11 +132,12 @@ public class frmDetalhesProduto extends javax.swing.JFrame {
                                     .addComponent(jLabel4))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtNotaFiscal))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addGap(7, 7, 7)
-                                        .addComponent(txtNome))))
+                                        .addComponent(txtNome))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addComponent(cboNotaFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -202,7 +198,7 @@ public class frmDetalhesProduto extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3)
-                                    .addComponent(txtNotaFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cboNotaFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(26, 26, 26)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel4)
@@ -231,10 +227,6 @@ public class frmDetalhesProduto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtNotaFiscalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNotaFiscalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNotaFiscalActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
@@ -293,6 +285,7 @@ public class frmDetalhesProduto extends javax.swing.JFrame {
     private javax.swing.JButton btnAplicar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnOK;
+    private javax.swing.JComboBox cboNotaFiscal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -310,7 +303,6 @@ public class frmDetalhesProduto extends javax.swing.JFrame {
     private javax.swing.JTextField txtFornecedor;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtNotaFiscal;
     private javax.swing.JTextField txtQtdEstoque;
     // End of variables declaration//GEN-END:variables
 }

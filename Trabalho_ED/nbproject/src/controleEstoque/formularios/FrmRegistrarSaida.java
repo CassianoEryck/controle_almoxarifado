@@ -4,12 +4,16 @@
  */
 package controleEstoque.formularios;
 
+import controleEstoque.controladores.ControlMain;
+
 /**
  *
  * @author Christopher
  */
 public class FrmRegistrarSaida extends javax.swing.JInternalFrame {
 
+    ControlMain controlMain = new ControlMain();
+    
     /**
      * Creates new form FrmRegistrarSaida
      */
@@ -52,6 +56,11 @@ public class FrmRegistrarSaida extends javax.swing.JInternalFrame {
         btnMarcarTodos.setBounds(120, 230, 200, 23);
 
         btnListaProdutos.setText("Ir para lista de produtos selecionados");
+        btnListaProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListaProdutosActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnListaProdutos);
         btnListaProdutos.setBounds(400, 270, 250, 23);
 
@@ -90,6 +99,11 @@ public class FrmRegistrarSaida extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnListaProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListaProdutosActionPerformed
+        controlMain.criaListaRegistrarSaida();
+    }//GEN-LAST:event_btnListaProdutosActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDesmarcarTodos;
     private javax.swing.JButton btnListaProdutos;

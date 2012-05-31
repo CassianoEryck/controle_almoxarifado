@@ -4,15 +4,17 @@
  */
 package controleEstoque.formularios;
 
+import controleEstoque.controladores.ControlMain;
+
 /**
  *
  * @author Christopher
  */
 public class FrmListaProduto extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form FrmListaProduto
-     */
+
+    ControlMain controlMain = new ControlMain();
+    
     public FrmListaProduto() {
         initComponents();
     }
@@ -90,6 +92,11 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
         btnAdicionarProduto.setBounds(460, 280, 230, 23);
 
         btnIndicarProduto.setText("Indicar compra de produto");
+        btnIndicarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIndicarProdutoActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnIndicarProduto);
         btnIndicarProduto.setBounds(460, 310, 230, 23);
 
@@ -99,6 +106,11 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnIndicarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIndicarProdutoActionPerformed
+        controlMain.criaIndicarProduto();
+    }//GEN-LAST:event_btnIndicarProdutoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarProduto;
     private javax.swing.JButton btnExcluirProdutos;

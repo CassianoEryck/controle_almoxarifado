@@ -8,13 +8,14 @@ package controleEstoque.formularios;
  *
  * @author Christopher
  */
-public class FrmListaSaidaProdutos extends javax.swing.JInternalFrame {
+public class FrmListaSaidaProdutos extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmListaSaidaProdutos
      */
     public FrmListaSaidaProdutos() {
         initComponents();
+        this.setResizable(false);
     }
 
     /**
@@ -36,14 +37,14 @@ public class FrmListaSaidaProdutos extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tabProdutos = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(null);
-        setMinimumSize(new java.awt.Dimension(730, 380));
+        setMaximumSize(new java.awt.Dimension(449, 387));
+        setMinimumSize(new java.awt.Dimension(449, 387));
+        setPreferredSize(new java.awt.Dimension(449, 387));
         getContentPane().setLayout(null);
 
         jLabel1.setText("Funcionário");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(90, 100, 60, 14);
+        jLabel1.setBounds(70, 100, 100, 14);
 
         txtData.setEnabled(false);
         txtData.addActionListener(new java.awt.event.ActionListener() {
@@ -52,16 +53,16 @@ public class FrmListaSaidaProdutos extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(txtData);
-        txtData.setBounds(160, 70, 130, 20);
+        txtData.setBounds(180, 70, 130, 20);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Retirada de produtos");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(110, 10, 190, 30);
+        jLabel2.setBounds(130, 10, 190, 30);
 
         jLabel3.setText("Data de retirada");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(70, 70, 80, 14);
+        jLabel3.setBounds(70, 70, 100, 14);
 
         txtFuncionario.setEnabled(false);
         txtFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -70,15 +71,15 @@ public class FrmListaSaidaProdutos extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(txtFuncionario);
-        txtFuncionario.setBounds(160, 100, 130, 20);
+        txtFuncionario.setBounds(180, 100, 130, 20);
 
         btnRetirarProdutos.setText("Retirar produtos");
         getContentPane().add(btnRetirarProdutos);
-        btnRetirarProdutos.setBounds(230, 300, 120, 23);
+        btnRetirarProdutos.setBounds(240, 300, 140, 23);
 
         btnCancelar.setText("Cancelar");
         getContentPane().add(btnCancelar);
-        btnCancelar.setBounds(70, 300, 90, 23);
+        btnCancelar.setBounds(70, 300, 120, 23);
 
         tabProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -112,7 +113,7 @@ public class FrmListaSaidaProdutos extends javax.swing.JInternalFrame {
         tabProdutos.getColumnModel().getColumn(3).setResizable(false);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(0, 140, 400, 150);
+        jScrollPane2.setBounds(20, 140, 400, 150);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
