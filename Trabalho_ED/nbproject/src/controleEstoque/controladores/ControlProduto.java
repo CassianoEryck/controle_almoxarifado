@@ -1,12 +1,12 @@
 package controleEstoque.controladores;
 
-import controleEstoque.arquivos.ControlArquivosTexto;
+import controleEstoque.arquivos.Arquivo;
+import controleEstoque.arquivos.ControlGravaArquivos;
 import controleEstoque.entidades.Estatisticas;
 import controleEstoque.entidades.Estoque;
 import controleEstoque.entidades.Produto;
 import controleEstoque.estruturaDados.ListaProdutos;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import javax.swing.JOptionPane;
@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 public class ControlProduto {
     
     ListaProdutos listaProdutos = new ListaProdutos();
-    ControlArquivosTexto controlArquivosTexto = new ControlArquivosTexto(ControlArquivosTexto.Arquivo.PRODUTO);    
+    ControlGravaArquivos controlArquivosTexto = new ControlGravaArquivos(Arquivo.PRODUTO);    
     
     public File leArquivo(){
         return controlArquivosTexto.leArquivo();
