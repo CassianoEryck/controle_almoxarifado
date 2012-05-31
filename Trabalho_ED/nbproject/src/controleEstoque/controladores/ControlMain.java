@@ -11,7 +11,8 @@ import javax.swing.JOptionPane;
  */
 public class ControlMain {
     
-   public FormLogin frmLogin = new FormLogin();   
+   public FormLogin frmLogin = 
+           new FormLogin();   
     
     public void criaFormularioLogin(){
         frmLogin.setVisible(true);
@@ -35,7 +36,6 @@ public class ControlMain {
          FrmRegistrarSaida saida = new FrmRegistrarSaida();
          
          menu.getJDesktopPane().removeAll();
-         
          menu.getJDesktopPane().add(saida);
          
          saida.setSize(menu.getJDesktopPane().getWidth(), 
@@ -59,13 +59,16 @@ public class ControlMain {
 
      public void chamaListaProdutos(FrmMenuPrincipal menu) {
          FrmListaProduto produto = new FrmListaProduto();
+       //  Login login = new Login();
          
          menu.getJDesktopPane().removeAll();
-         
          menu.getJDesktopPane().add(produto);
          
          produto.setSize(menu.getJDesktopPane().getWidth(),
                  menu.getJDesktopPane().getHeight());
+         
+         /* if (login.permission == diretor)
+         produto.btnProdutosPendentes.setEnabled(false); */
          
          produto.setVisible(true);
      }
@@ -74,9 +77,8 @@ public class ControlMain {
          FrmListaFornecedores fornecedor = new FrmListaFornecedores();
          
          menu.getJDesktopPane().removeAll();
-       
          menu.getJDesktopPane().add(fornecedor);
-         
+ 
          fornecedor.setSize(menu.getJDesktopPane().getWidth(),
                  menu.getJDesktopPane().getHeight());
          

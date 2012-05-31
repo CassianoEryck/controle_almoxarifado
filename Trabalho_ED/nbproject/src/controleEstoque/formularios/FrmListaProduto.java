@@ -35,7 +35,7 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
         btnExcluirProdutos = new javax.swing.JButton();
         btnAdicionarProduto = new javax.swing.JButton();
         btnIndicarProduto = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnProdutosPendentes = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(730, 380));
         getContentPane().setLayout(null);
@@ -100,9 +100,9 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
         getContentPane().add(btnIndicarProduto);
         btnIndicarProduto.setBounds(460, 310, 230, 23);
 
-        jButton1.setText("Produtos pendentes");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(540, 70, 150, 23);
+        btnProdutosPendentes.setText("Produtos pendentes");
+        getContentPane().add(btnProdutosPendentes);
+        btnProdutosPendentes.setBounds(540, 70, 150, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -115,7 +115,7 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnAdicionarProduto;
     private javax.swing.JButton btnExcluirProdutos;
     private javax.swing.JButton btnIndicarProduto;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnProdutosPendentes;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblEntradaProdutos1;
