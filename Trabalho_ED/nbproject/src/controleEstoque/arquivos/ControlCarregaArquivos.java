@@ -43,11 +43,15 @@ public class ControlCarregaArquivos {
                     
     }
     
+    /**
+     * Carrega a lista de produtos direto do bloco de notas
+     * @return a Lista completa com todos arquivos salvos
+     */
     public ListaProdutos carregaListaProdutos(){
         ListaProdutos lista = new ListaProdutos();
         
         if(verificaArquivo()){
-            try {
+            try {                
                 BufferedReader bufReader = new BufferedReader(new FileReader(file));
                 String strReader = bufReader.readLine();
                 int i = 0;                
