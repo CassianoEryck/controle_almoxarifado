@@ -96,5 +96,32 @@ public class ListaProdutos {
         return lista;
     }
 
+    public int getTamanhoLista () {
+        No aux = inicio; 
+        int tamanho = 0;
+        
+        while (aux != null) {
+            aux = aux.getProx();
+            tamanho++;
+        }
+        
+        return tamanho;
+    }
+    
+    public String[] percorreListaArray(){
+        
+        String[] lista = new String[this.getTamanhoLista()];
+        No aux = inicio;
+       
+        int i = 0;
+        
+        while(aux != null){
+            lista[i] = aux.getObjeto().toString();
+            aux = aux.getProx();
+            i++;
+        }
+        
+        return lista;              
+    }
 }
 

@@ -5,8 +5,8 @@
 package controleEstoque.formularios;
 
 import controleEstoque.controladores.ControlMain;
-import javax.swing.table.DefaultTableModel;
-
+import controleEstoque.estruturaDados.ListaProdutos;
+import javax.swing.JList;
 /**
  *
  * @author Christopher
@@ -14,9 +14,14 @@ import javax.swing.table.DefaultTableModel;
 public class FrmListaProduto extends javax.swing.JInternalFrame {
 
     ControlMain controlMain = new ControlMain();
+    ListaProdutos listaProdutos;
     
     public FrmListaProduto() {
         initComponents();
+    }
+
+    public JList getLstProdutos() {
+        return lstProdutos;
     }
 
     /**
@@ -34,6 +39,8 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
         btnAdicionarProduto = new javax.swing.JButton();
         btnIndicarProduto = new javax.swing.JButton();
         btnProdutosPendentes = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lstProdutos = new javax.swing.JList();
 
         setPreferredSize(new java.awt.Dimension(730, 380));
         getContentPane().setLayout(null);
@@ -73,6 +80,17 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
         getContentPane().add(btnProdutosPendentes);
         btnProdutosPendentes.setBounds(540, 70, 150, 23);
 
+        listaProdutos = new ListaProdutos();
+        lstProdutos.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = listaProdutos.percorreListaArray();
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(lstProdutos);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(70, 110, 560, 120);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -91,6 +109,8 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnIndicarProduto;
     private javax.swing.JButton btnProdutosPendentes;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList lstProdutos;
     private javax.swing.JTextField txtPesquisaProduto1;
     // End of variables declaration//GEN-END:variables
 }

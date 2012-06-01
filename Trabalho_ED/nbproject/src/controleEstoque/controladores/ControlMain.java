@@ -58,19 +58,18 @@ public class ControlMain {
         }
 
      public void chamaListaProdutos(FrmMenuPrincipal menu) {
-         FrmListaProduto produto = new FrmListaProduto();
+         FrmListaProduto frmProduto = new FrmListaProduto();
        //  Login login = new Login();
          
          menu.getJDesktopPane().removeAll();
-         menu.getJDesktopPane().add(produto);
+         menu.getJDesktopPane().add(frmProduto);
          
-         produto.setSize(menu.getJDesktopPane().getWidth(),
+         frmProduto.setSize(menu.getJDesktopPane().getWidth(),
                  menu.getJDesktopPane().getHeight());
          
          /* if (login.permission == diretor)
          produto.btnProdutosPendentes.setEnabled(false); */
-         
-         produto.setVisible(true);
+         frmProduto.setVisible(true);
      }
      
      public void chamaListaFornecedores(FrmMenuPrincipal menu) {
@@ -85,4 +84,9 @@ public class ControlMain {
          fornecedor.setVisible(true);
      }
 
+     public void criaDetalhesProduto () {
+         frmDetalhesProduto frmDetalhes = new frmDetalhesProduto();
+         
+         frmDetalhes.setVisible(true);
+     }
 }
