@@ -1,5 +1,6 @@
 package controleEstoque.controladores;
 import controleEstoque.entidades.*;
+import controleEstoque.formularios.FrmAdicionarQuantidade;
 
 /**
  * @author Eduardo Lacerda
@@ -7,7 +8,8 @@ import controleEstoque.entidades.*;
  * <b> Classe que controla as operações de Estoque </b>
   */
 public class ControlEstoque {
-    
+
+    Estoque e = new Estoque();
     /**
      * Operação que avalia se o produto tem necessidade de compra a partir das estatisticas geradas por ele.
      * @param estatisticas, a partir das estatisticas de um produto, verifica a necessidade de compra.
@@ -31,6 +33,13 @@ public class ControlEstoque {
     }
     
     public void atualizarEstoque(Produto produto){
+        
+        FrmAdicionarQuantidade frmAddQnt = new FrmAdicionarQuantidade();
+        e.atualizarQuantidade(Integer.parseInt
+                (frmAddQnt.getTxtQtdAdquirida().getText()));
+    
+        // ou linha da FrmListaSaidaProdutos pra saída, pegando quantidade e
+        //multiplicando por -1, para ele subtrair da quantidade total
         
     }
     

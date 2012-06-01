@@ -4,16 +4,15 @@
  */
 package controleEstoque.formularios;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author Rodrigo Itiro
  */
-public class frmAdicionarQuantidade extends javax.swing.JFrame {
-
-    /**
-     * Creates new form frmAdicionarQuantidade
-     */
-    public frmAdicionarQuantidade() {
+public class FrmAdicionarQuantidade extends javax.swing.JFrame {
+    
+    public FrmAdicionarQuantidade() {
         initComponents();
     }
 
@@ -80,7 +79,6 @@ public class frmAdicionarQuantidade extends javax.swing.JFrame {
         jLabel8.setText("Valor Unitário");
 
         btnCancelar.setText("Cancelar");
-        btnCancelar.setName("null");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
@@ -208,13 +206,13 @@ public class frmAdicionarQuantidade extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmAdicionarQuantidade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAdicionarQuantidade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmAdicionarQuantidade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAdicionarQuantidade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmAdicionarQuantidade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAdicionarQuantidade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmAdicionarQuantidade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAdicionarQuantidade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -224,9 +222,13 @@ public class frmAdicionarQuantidade extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new frmAdicionarQuantidade().setVisible(true);
+                new FrmAdicionarQuantidade().setVisible(true);
             }
         });
+    }
+
+    public JTextField getTxtQtdAdquirida() {
+        return txtQtdAdquirida;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;

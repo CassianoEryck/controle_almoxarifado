@@ -5,7 +5,7 @@ package controleEstoque.entidades;
  */
 public class Estoque {
     private Estatisticas estatistica = new Estatisticas();
-    int quantidade;
+    private int quantidade;
 
     public Estoque() {
         this.estatistica = new Estatisticas();
@@ -36,7 +36,7 @@ public class Estoque {
     }
     
     public void atualizarQuantidade(int quantidade){
-        
+        this.quantidade += quantidade;
     }
     
     public void atualizarEstoque(){
