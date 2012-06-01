@@ -8,12 +8,12 @@ package controleEstoque.formularios;
  *
  * @author Rodrigo Itiro
  */
-public class frmDetalhesProduto extends javax.swing.JFrame {
+public class FrmDetalhesProduto extends javax.swing.JFrame {
 
     /**
      * Creates new form frmDetalhesProduto
      */
-    public frmDetalhesProduto() {
+    public FrmDetalhesProduto() {
         initComponents();
     }
 
@@ -261,13 +261,13 @@ public class frmDetalhesProduto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmDetalhesProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmDetalhesProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmDetalhesProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmDetalhesProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmDetalhesProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmDetalhesProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmDetalhesProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmDetalhesProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -277,7 +277,7 @@ public class frmDetalhesProduto extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new frmDetalhesProduto().setVisible(true);
+                new FrmDetalhesProduto().setVisible(true);
             }
         });
     }

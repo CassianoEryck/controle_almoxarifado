@@ -8,12 +8,12 @@ package controleEstoque.formularios;
  *
  * @author Rodrigo Itiro
  */
-public class frmIndicarCompra extends javax.swing.JFrame {
+public class FrmIndicarCompra extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmIndicarCompra
+     * Creates new form FrmIndicarCompra
      */
-    public frmIndicarCompra() {
+    public FrmIndicarCompra() {
         initComponents();
         this.setResizable(false);
     }
@@ -119,13 +119,13 @@ public class frmIndicarCompra extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmIndicarCompra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmIndicarCompra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmIndicarCompra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmIndicarCompra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmIndicarCompra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmIndicarCompra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmIndicarCompra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmIndicarCompra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -135,7 +135,7 @@ public class frmIndicarCompra extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new frmIndicarCompra().setVisible(true);
+                new FrmIndicarCompra().setVisible(true);
             }
         });
     }
