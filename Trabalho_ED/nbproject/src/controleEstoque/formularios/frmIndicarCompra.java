@@ -4,6 +4,9 @@
  */
 package controleEstoque.formularios;
 
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Rodrigo Itiro
@@ -17,6 +20,15 @@ public class FrmIndicarCompra extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
     }
+
+    public JTextField getTxtNome() {
+        return txtNome;
+    }
+
+    public JComboBox getCmbFornecedor() {
+        return cmbFornecedor;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

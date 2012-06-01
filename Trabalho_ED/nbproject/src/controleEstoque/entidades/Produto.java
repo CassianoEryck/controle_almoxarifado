@@ -1,11 +1,18 @@
 package controleEstoque.entidades;
+
+import controleEstoque.estruturaDados.ListaProdutos;
+
 /**
  * @author Eduardo Lacerda
  * Data: May 26, 2012
  */
 public class Produto {
     
+    private Fornecedor fornecedor;
+    private ListaProdutos produtosIndicados = new ListaProdutos();
+    
     private int id;
+    private String nome;
     private String descricao;
     private double valorUnitario;
     private Estoque estoque = new Estoque();
@@ -14,23 +21,32 @@ public class Produto {
 
     public Produto() {
         this.id = 0;
+        this.nome = "";
         this.descricao = "";
         this.valorUnitario = 0.00;
         this.estoque = new Estoque();
         this.saidaProduto = new SaidaProduto();
         this.entradaProduto = new EntradaProduto();
+        this.fornecedor = new Fornecedor();
     }
 
-    public Produto(int id, String descricao, double valorUnitario, Estoque estoque, SaidaProduto saidaProduto, EntradaProduto entradaProduto) {
+    
+    public Produto(int id, String nome, String descricao, double valorUnitario,
+            Estoque estoque, SaidaProduto saidaProduto, EntradaProduto entradaProduto, String nomeFornecedor) {
         this.id = id;
+        this.nome = nome;
         this.descricao = descricao;
         this.valorUnitario = valorUnitario;
         this.estoque = estoque;
         this.saidaProduto = saidaProduto;
         this.entradaProduto = entradaProduto;
+        this.fornecedor = new Fornecedor(nomeFornecedor);
     }
     
-    
+    public Produto (String nome, String nomeFornecedor) {
+        this.nome = nome;
+        this.fornecedor = new Fornecedor(nomeFornecedor);
+    }
 
     public String getDescricao() {
         return descricao;
@@ -76,8 +92,8 @@ public class Produto {
         return this;
     }
     
-    public void indicarProduto(){
-        
+    public void indicarProduto(String nome, String fornecedor){
+        produtosIndicados.adiciona(new Produto(nome, fornecedor));
     }
 
     @Override

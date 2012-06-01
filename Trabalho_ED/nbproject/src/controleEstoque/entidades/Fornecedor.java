@@ -1,4 +1,7 @@
 package controleEstoque.entidades;
+
+import controleEstoque.estruturaDados.ListaProdutos;
+
 /**
  * @author Eduardo Lacerda
  * Data: May 29, 2012
@@ -7,18 +10,21 @@ public class Fornecedor {
     
     private String nome;
     private String telefone;
-    private Produto produto;
+    private ListaProdutos produtos;
 
     public Fornecedor() {
         this.nome = "";
         this.telefone = "";
-        this.produto = new Produto();
+        this.produtos = new ListaProdutos();
     }
     
-    public Fornecedor(String nome, String telefone, Produto produto){
+    public Fornecedor(String nome, String telefone){
         this.nome = nome;
         this.telefone = telefone;
-        this.produto = produto;
+    }
+    
+    public Fornecedor(String nome){
+        this.nome = nome;
     }
 
     public String getNome() {
@@ -29,12 +35,8 @@ public class Fornecedor {
         this.nome = nome;
     }
 
-    public Produto getProduto() {
-        return produto;
-    }
-
-    public void setProduto(Produto produto) {
-        this.produto = produto;
+    public ListaProdutos getProdutos() {
+        return produtos;
     }
 
     public String getTelefone() {

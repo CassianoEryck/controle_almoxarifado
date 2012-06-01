@@ -6,6 +6,7 @@ import controleEstoque.entidades.Estatisticas;
 import controleEstoque.entidades.Estoque;
 import controleEstoque.entidades.Produto;
 import controleEstoque.estruturaDados.ListaProdutos;
+import controleEstoque.formularios.FrmIndicarCompra;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -87,7 +88,12 @@ public class ControlProduto {
         return this.listaProdutos;
     }
     
-    
-    
+    public void indicarProduto() {
+        FrmIndicarCompra frmIndicarCompra = new FrmIndicarCompra();
+        Produto p = new Produto();
+        
+        p.indicarProduto(frmIndicarCompra.getTxtNome().getText(),
+                (String) frmIndicarCompra.getCmbFornecedor().getSelectedItem());
+    }
 
 }
