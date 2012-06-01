@@ -1,7 +1,5 @@
 package controleEstoque.estruturaDados;
 
-import controleEstoque.entidades.Produto;
-
 /**
  * @author Eduardo Lacerda
  * Data: May 30, 2012
