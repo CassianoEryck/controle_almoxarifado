@@ -9,7 +9,14 @@ public class Login {
         return permission;
     }
 
-    public void setPermission(Permissao permission) {
+    public void setPermission(String permission) {
+        if(permission.equals("DIRETOR"))
+            this.permission = Permissao.DIRETOR;
+        else
+            this.permission = Permissao.COMUM;
+    }
+    
+    public void setPermission(Permissao permission){
         this.permission = permission;
     }
 
@@ -29,8 +36,20 @@ public class Login {
         this.usuario = usuario;
     }
     
-    public boolean validaAcesso(String usuario, String senha){
-        return true;
+    public boolean validaAcesso(String usuario, char[] senha){
+        boolean valida = true;
+        if(this.usuario.equals(usuario)){
+            int i = 0;
+            while(i < senha.length){
+                if(!(this.senha[i] == senha[i])){
+                    valida = false;
+                    break;                    
+                }
+                    
+                i++;
+            }
+        }
+        return false;
     }
     
    

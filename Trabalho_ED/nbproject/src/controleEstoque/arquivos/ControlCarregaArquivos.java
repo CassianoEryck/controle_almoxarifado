@@ -11,6 +11,7 @@ import controleEstoque.estruturaDados.ListaProdutos;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.StringReader;
 import javax.swing.JOptionPane;
 
 /**
@@ -34,13 +35,13 @@ public class ControlCarregaArquivos {
     public ControlCarregaArquivos(Arquivo arquivo){
         switch (arquivo){
             case PRODUTO: 
-                this.file = new File("produto.txt");
+                this.file = new File("Produtos/produto.txt");
             break;
             case FUNCIONARIO:
-                this.file = new File("funcionario.txt");
+                this.file = new File("Funcionarios/funcionario.txt");
             break; 
             case LOGIN:
-                this.file = new File("login.txt");
+                this.file = new File("Login/login.txt");
             break; 
         }        
     }
@@ -150,6 +151,33 @@ public class ControlCarregaArquivos {
         }
         
         return strFinal;
+    }
+    
+    public String[] retornaStringArquivo(){
+        String strReader = "", strFinal = "";        
+        String[] vetRetorno = null;
+        int index = 0;
+        try{
+            BufferedReader bufReader = new BufferedReader(new FileReader(this.file));
+            while((strReader = bufReader.readLine()) != null)
+                index++;
+            bufReader.close();
+            
+            vetRetorno = new String[index];
+            index = 0;
+            bufReader = new BufferedReader(new FileReader(this.file));
+            while((strReader = bufReader.readLine()) != null){
+                vetRetorno[index] = strReader;
+                index++;
+            }
+            
+            
+        }catch (Exception e){
+            strReader = "";
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        
+        return vetRetorno;
     }
     
 }

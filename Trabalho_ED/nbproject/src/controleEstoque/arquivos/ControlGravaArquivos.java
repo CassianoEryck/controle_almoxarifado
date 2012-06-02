@@ -24,7 +24,9 @@ public class ControlGravaArquivos {
     File dir;
     EntradaProduto entradaProduto;
     SaidaProduto saidaProduto;
-    
+
+    public ControlGravaArquivos() {
+    }
     /**
      * Construtor da classe ControlArquivosTexto
      * @param nomeArquivo selecione o tipo de arquivo (PRODUTO, FUNCIONARIO, LOGIN)
@@ -41,7 +43,8 @@ public class ControlGravaArquivos {
                 this.dir = new File("Funcionarios");
             break; 
             case LOGIN:
-                this.file = new File("login.txt");                
+                this.file = new File("login.txt");
+                this.dir = new File("Login");
             break; 
         }
     }
@@ -107,6 +110,7 @@ public class ControlGravaArquivos {
         gravaRegistroProduto(strAnterior, saidaProduto);
     }
     
+    
     private void gravaRegistroProduto(String arquivoAnterior, Object objeto){
         String arquivo = "";
         if(arquivoAnterior != "" && arquivoAnterior != null){
@@ -170,6 +174,18 @@ public class ControlGravaArquivos {
             Logger.getLogger(ControlGravaArquivos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void escreveNoArquivo(String textoArquivo){
+        try {            
+            BufferedWriter bufWriter = new BufferedWriter(new FileWriter(new File(textoArquivo)));
+            bufWriter.write(textoArquivo);
+            bufWriter.close();
+        } catch (IOException ex) {
+            Logger.getLogger(ControlGravaArquivos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
 
 }
 

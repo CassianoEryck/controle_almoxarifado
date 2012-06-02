@@ -22,12 +22,11 @@ public class ControlMain {
     public void criaMenuPrincipal(FormLogin frmLogin, boolean autenticado){
         if(autenticado){
             frmLogin.dispose();
-          FrmMenuPrincipal menu = new FrmMenuPrincipal();
-          menu.setVisible(true);
+            FrmMenuPrincipal menu = new FrmMenuPrincipal();
+            menu.setVisible(true);
         }else{
             JOptionPane.showMessageDialog(frmLogin, "Usuário ou senha inválidos!", "Erro",
-                    JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
+                    JOptionPane.ERROR_MESSAGE);            
         }
     
     }
@@ -89,4 +88,17 @@ public class ControlMain {
          
          frmDetalhes.setVisible(true);
      }
+     
+     public void chamaAdicionarFornecedores(FrmMenuPrincipal menu) {
+         FmrAdicionaFornecedor fornecedor = new FmrAdicionaFornecedor();
+         
+         menu.getJDesktopPane().removeAll();
+         menu.getJDesktopPane().add(fornecedor);
+ 
+         fornecedor.setSize(menu.getJDesktopPane().getWidth(),
+                 menu.getJDesktopPane().getHeight());
+         
+         fornecedor.setVisible(true);
+     }
+     
 }

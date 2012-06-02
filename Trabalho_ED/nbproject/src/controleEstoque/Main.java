@@ -1,4 +1,5 @@
 package controleEstoque;
+import controleEstoque.arquivos.ControlDiretorios;
 import controleEstoque.controladores.ControlMain;
 /**
  * @author Eduardo Lacerda
@@ -13,11 +14,13 @@ import controleEstoque.controladores.ControlMain;
  */
 public class Main {
     
+    
     /**
      * Método main que irá gerar um novo Formulário de Login.
      * @param args 
      */
     public static void main(String args[]){
+       ControlDiretorios.verificaDiretorios();
        ControlMain controlMain = new ControlMain();
        controlMain.criaFormularioLogin();
     }

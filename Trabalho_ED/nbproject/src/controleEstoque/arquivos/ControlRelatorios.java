@@ -64,8 +64,14 @@ public class ControlRelatorios {
       
     
     }
-    int total = 0;
     
+    int total = 0;    
+    /**
+     * Gera relatório de entrada de produtos
+     * @param produto
+     * @param entradaProduto
+     * @return 
+     */
     public String geraRelatorioProdutos(Produto produto, EntradaProduto entradaProduto){
         File arquivoProduto = new File("Produtos/EntradaProdutos/entradaProduto" + Integer.toString(produto.getId())+".txt");
         File arquivoRelatorio = new File("Produtos/EntradaProdutos/RelatorioProduto" + produto.getNome() + Integer.toString(produto.getId()) + ".txt");
@@ -78,7 +84,7 @@ public class ControlRelatorios {
                 writer.newLine();
                 writer.write("---------- Entradas --------------------");
                 writer.newLine();
-                writer.write(leArquivo(arquivoProduto));
+                writer.write(leArquivoEntrada(arquivoProduto));
                 writer.write("----------------------------------------");
                 writer.newLine();
                 writer.write("Total: " + Integer.toString(total));
@@ -93,9 +99,14 @@ public class ControlRelatorios {
             
         }
         return new ControlCarregaArquivos().retornaStringArquivo(arquivoRelatorio.getPath());
-    }
+    }    
     
-    public String leArquivo(File arquivoProduto){
+    /**
+     * Le o arquivo de texto de entrada de produtos
+     * @param arquivoProduto
+     * @return 
+     */
+    public String leArquivoEntrada(File arquivoProduto){
         String strRetorno = "";        
         try {
             BufferedReader reader = new BufferedReader(new FileReader(arquivoProduto));
@@ -131,16 +142,86 @@ public class ControlRelatorios {
                 
                 
         return strRetorno;
+    }   
+    
+    /**
+     * Le o arquivo de saída de produto
+     * @param arquivoProduto
+     * @return 
+     */
+    
+    public String leArquivoSaida(File arquivoProduto){
+        String strRetorno = "";        
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(arquivoProduto));
+            String strReader = reader.readLine();
+            
+            int i = 0;   
+            total = 0;
+            while(strReader != null){
+                switch (i){
+                    case 0:
+                        strRetorno += "Quantidade: " + strReader;
+                    break;
+                    case 1:
+                        strRetorno += "Funcionario: " + strReader;
+                    break;
+                    case 2:
+                        strRetorno += "Data: " + strReader;
+                    break;
+                    case 3:
+                        i = 0;
+                        total++;
+                    break;
+                }
+                i++;               
+                strRetorno += "\n";
+                strReader = reader.readLine();
+                    
+            }
+            reader.close();
+        } catch (Exception ex) {
+            Logger.getLogger(ControlRelatorios.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+                
+        return strRetorno;
+    }   
+    
+    /**
+     * Cria o arquivo de saida de produtos
+     * @param produto
+     * @param saidaProduto
+     * @return 
+     */
+    public String geraRelatorioProdutos(Produto produto, SaidaProduto saidaProduto){
+        File arquivoProduto = new File("Produtos/SaidaProdutos/saidaProduto" + Integer.toString(produto.getId())+".txt");
+        File arquivoRelatorio = new File("Produtos/SaidaProdutos/RelatorioProduto" + produto.getNome() + Integer.toString(produto.getId()) + ".txt");
+        if(arquivoProduto.exists()){            
+            try {
+                BufferedWriter writer = new BufferedWriter(new FileWriter(arquivoRelatorio));
+                writer.write("--- Relatório Saída Produto ----------");
+                writer.newLine();
+                writer.write("Produto: " + produto.getNome());
+                writer.newLine();
+                writer.write("---------- Saídas --------------------");
+                writer.newLine();
+                writer.write(leArquivoSaida(arquivoProduto));
+                writer.write("----------------------------------------");
+                writer.newLine();
+                writer.write("Total: " + Integer.toString(total));
+                writer.newLine();
+                writer.write("Data: " + new SimpleDateFormat("dd/mm/yyyy").format(new Date()));
+                writer.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+           
+            
+            
+        }
+        return new ControlCarregaArquivos().retornaStringArquivo(arquivoRelatorio.getPath());
     }
-    
-    
-    public String relatorioProdutos(Produto produto, SaidaProduto saidaProduto){
-        return "";
-    }
-    
-    
-    
-    
     
     public String relatorioConsumoFuncionario(){
         return "";

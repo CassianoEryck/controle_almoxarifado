@@ -55,6 +55,11 @@ public class FormLogin extends javax.swing.JFrame {
                 btnLoginMouseClicked(evt);
             }
         });
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         btnSair.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         btnSair.setText("Sair");
@@ -151,6 +156,10 @@ public class FormLogin extends javax.swing.JFrame {
     private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
       
     }//GEN-LAST:event_txtSenhaKeyPressed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     private void chamaMenuPrincipal(){
          ControlMain controlMain = new ControlMain();
