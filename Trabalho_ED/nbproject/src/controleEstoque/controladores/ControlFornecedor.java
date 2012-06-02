@@ -13,6 +13,9 @@ public class ControlFornecedor {
         
     }
     
+    /**
+     * Chama a tela de fornecedor
+     */
     public void chamaTelaFornecedor(){
         FmrAdicionaFornecedor frmAdicionaFornecedor = new FmrAdicionaFornecedor();
         frmAdicionaFornecedor.setLocationRelativeTo(null);
