@@ -36,6 +36,12 @@ public class Login {
         this.usuario = usuario;
     }
     
+    /**
+     * 
+     * @param usuario
+     * @param senha
+     * @return 
+     */
     public boolean validaAcesso(String usuario, char[] senha){
         boolean valida = true;
         if(this.usuario.equals(usuario)){
@@ -48,8 +54,11 @@ public class Login {
                     
                 i++;
             }
+            return valida;
         }
         return false;
+        
+       
     }
     
    
