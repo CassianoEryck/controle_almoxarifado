@@ -6,7 +6,7 @@ import controleEstoque.entidades.Estatisticas;
 import controleEstoque.entidades.Estoque;
 import controleEstoque.entidades.Produto;
 import controleEstoque.estruturaDados.ListaProdutos;
-import controleEstoque.formularios.FrmIndicarCompra;
+import controleEstoque.formularios.frmIndicarCompra;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -89,7 +89,7 @@ public class ControlProduto {
     }
     
     public void indicarProduto() {
-        FrmIndicarCompra frmIndicarCompra = new FrmIndicarCompra();
+        frmIndicarCompra frmIndicarCompra = new frmIndicarCompra();
         Produto p = new Produto();
         
         p.indicarProduto(frmIndicarCompra.getTxtNome().getText(),

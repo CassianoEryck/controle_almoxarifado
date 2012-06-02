@@ -52,7 +52,7 @@ public class ControlMain {
        }
         
         public void criaIndicarProduto () {
-            FrmIndicarCompra indicarProduto = new FrmIndicarCompra();
+            frmIndicarCompra indicarProduto = new frmIndicarCompra();
             
             indicarProduto.setVisible(true);
         }

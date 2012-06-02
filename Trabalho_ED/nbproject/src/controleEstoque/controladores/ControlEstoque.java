@@ -1,6 +1,6 @@
 package controleEstoque.controladores;
 import controleEstoque.entidades.*;
-import controleEstoque.formularios.FrmAdicionarQuantidade;
+import controleEstoque.formularios.frmAdicionarQuantidade;
 
 /**
  * @author Eduardo Lacerda
@@ -34,7 +34,7 @@ public class ControlEstoque {
     
     public void atualizarEstoque(Produto produto){
         
-        FrmAdicionarQuantidade frmAddQnt = new FrmAdicionarQuantidade();
+        frmAdicionarQuantidade frmAddQnt = new frmAdicionarQuantidade();
         e.atualizarQuantidade(Integer.parseInt
                 (frmAddQnt.getTxtQtdAdquirida().getText()));
     
