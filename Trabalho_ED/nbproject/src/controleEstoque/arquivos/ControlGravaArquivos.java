@@ -65,36 +65,55 @@ public class ControlGravaArquivos {
      * @param id Id do produto correspondente a saida
      */
     public ControlGravaArquivos(SaidaProduto saidaProduto, int id) {
-        this.file = new File("entradaProduto" + Integer.toString(id) + ".txt");  
+        this.dir = new File("Produtos/SaidaProdutos");
+        this.file = new File("Produtos/SaidaProdutos/SaidaProduto" + Integer.toString(id) + ".txt");  
         this.saidaProduto = saidaProduto;
         gravaRegistroProduto(saidaProduto);
     }
     
-    public void gravaRegistroProduto(EntradaProduto entradaProduto){
-        String strAnterior = "";
+    /**
+     * Verifica se já existe algum arquivo existente seus diretórios e passa seu conteúdo para o returno
+     * @return 
+     */
+    private String carregaArquivoAnterior(){
+        String strAnterior = null;
         if(!dir.exists()){
            dir.mkdirs();
         }else{
             if(file.exists())                
                 strAnterior = new ControlCarregaArquivos(file).retornaStringArquivo(file.getPath());    
-        }                
+        }   
+        
+        return strAnterior;
+    }
+    
+    /**
+     * Registra a entrada de um produto
+     * @param entradaProduto 
+     */
+    public void gravaRegistroProduto(EntradaProduto entradaProduto){
+        String strAnterior = carregaArquivoAnterior();                     
         gravaRegistroProduto(strAnterior);
     }
     
+    
+    
+    /**
+     * Registra a saída de um produto
+     * @param saidaProduto 
+     */
     public void gravaRegistroProduto(SaidaProduto saidaProduto){
-        String strAnterior = "";
-        if(!file.exists())
-            strAnterior = controlCarregaArquivos.retornaStringArquivo(file.getPath());            
+        String strAnterior = carregaArquivoAnterior();              
         gravaRegistroProduto(strAnterior);
     }
     
     private void gravaRegistroProduto(String arquivoAnterior){
         String arquivo = "";
-        if(arquivoAnterior != "" || arquivoAnterior != null){
+        if(arquivoAnterior != "" && arquivoAnterior != null){
             arquivo = arquivoAnterior;
         }
         
-        arquivo += this.entradaProduto.toString();
+        arquivo += this.saidaProduto.toString();
         
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));

@@ -39,6 +39,10 @@ public class ControlCarregaArquivos {
         }        
     }
     
+    /**
+     * verifica se o arquivo existe
+     * @return true se existe, false se não.
+     */
     public boolean verificaArquivo(){
         if(file.exists())
             return true;
@@ -117,6 +121,11 @@ public class ControlCarregaArquivos {
         return lista;
     }
     
+    /**
+     * Retorna o conteúdo de um arquivo de texto
+     * @param arquivo diretório do arquivo de texto.
+     * @return conteúdo do arquivo
+     */
     public String retornaStringArquivo(String arquivo){
         String strReader = "", strFinal = "";        
         try{

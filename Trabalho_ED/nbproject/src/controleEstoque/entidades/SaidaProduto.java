@@ -1,5 +1,6 @@
 package controleEstoque.entidades;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -10,6 +11,20 @@ public class SaidaProduto {
     private Funcionario funcionario;
     private Date data;
     private int quantidade;
+
+    public SaidaProduto() {
+        this.funcionario = new Funcionario();
+        this.data = new Date();
+        this.quantidade = 0;
+    }
+
+    public SaidaProduto(Funcionario funcionario, Date data, int quantidade) {
+        this.funcionario = funcionario;
+        this.data = data;
+        this.quantidade = quantidade;
+    }
+    
+    
 
     public Date getData() {
         return data;
@@ -54,10 +69,11 @@ public class SaidaProduto {
         
     }
 
-    @Override
+   @Override
     public String toString() {
-        return funcionario + "\n" + data + "\n";
+        return  Integer.toString(quantidade) + "\n"+ funcionario.getNome() + "\n" + new SimpleDateFormat("dd/mm/yyyy").format(data) + "\n";
     }
+    
     
     
 
