@@ -64,10 +64,11 @@ public class ControlRelatorios {
       
     
     }
+    int total = 0;
     
-    public String relatorioProdutos(Produto produto, EntradaProduto entradaProduto){
+    public String geraRelatorioProdutos(Produto produto, EntradaProduto entradaProduto){
         File arquivoProduto = new File("Produtos/EntradaProdutos/entradaProduto" + Integer.toString(produto.getId())+".txt");
-        File arquivoRelatorio = new File("Produtos/EntradaProdutos/Relatorio_" + produto.getNome() + ".txt");
+        File arquivoRelatorio = new File("Produtos/EntradaProdutos/RelatorioProduto" + produto.getNome() + Integer.toString(produto.getId()) + ".txt");
         if(arquivoProduto.exists()){            
             try {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(arquivoRelatorio));
@@ -76,10 +77,11 @@ public class ControlRelatorios {
                 writer.write("Produto: " + produto.getNome());
                 writer.newLine();
                 writer.write("---------- Entradas --------------------");
+                writer.newLine();
                 writer.write(leArquivo(arquivoProduto));
                 writer.write("----------------------------------------");
                 writer.newLine();
-                writer.write("Total: " + Integer.toString(0));
+                writer.write("Total: " + Integer.toString(total));
                 writer.newLine();
                 writer.write("Data: " + new SimpleDateFormat("dd/mm/yyyy").format(new Date()));
                 writer.close();
@@ -90,7 +92,7 @@ public class ControlRelatorios {
             
             
         }
-        return leArquivo(arquivoRelatorio);
+        return new ControlCarregaArquivos().retornaStringArquivo(arquivoRelatorio.getPath());
     }
     
     public String leArquivo(File arquivoProduto){
@@ -99,7 +101,8 @@ public class ControlRelatorios {
             BufferedReader reader = new BufferedReader(new FileReader(arquivoProduto));
             String strReader = reader.readLine();
             
-            int i = 0;            
+            int i = 0;   
+            total = 0;
             while(strReader != null){
                 switch (i){
                     case 0:
@@ -113,8 +116,10 @@ public class ControlRelatorios {
                     break;
                     case 3:
                         i = 0;
+                        total++;
                     break;
                 }
+                i++;               
                 strRetorno += "\n";
                 strReader = reader.readLine();
                     

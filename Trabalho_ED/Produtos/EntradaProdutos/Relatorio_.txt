@@ -1,0 +1,10 @@
+--- Relatório Entrada Produto ----------
+Produto: 
+---------- Entradas --------------------
+Data: 02/29/2012
+Fornecedor: 
+Telefone: 
+
+----------------------------------------
+Total: 1
+Data: 02/01/2012

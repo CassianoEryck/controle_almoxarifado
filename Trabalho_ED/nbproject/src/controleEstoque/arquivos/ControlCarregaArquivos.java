@@ -20,6 +20,12 @@ import javax.swing.JOptionPane;
 public class ControlCarregaArquivos {
     
     File file;
+
+    public ControlCarregaArquivos() {
+        file = null;
+    }
+    
+    
     
     public ControlCarregaArquivos(File file){
         this.file = file;
