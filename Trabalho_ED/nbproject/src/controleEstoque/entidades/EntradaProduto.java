@@ -1,5 +1,6 @@
 package controleEstoque.entidades;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -12,7 +13,9 @@ public class EntradaProduto {
     private String notaFiscal;
 
     public EntradaProduto() {
-        
+        this.data = new Date();
+        this.fornecedor = new Fornecedor();
+        this.notaFiscal = "";
     }
     
     public EntradaProduto(Date data, Fornecedor fornecedor, String notaFiscal){
@@ -56,7 +59,8 @@ public class EntradaProduto {
     
     @Override
     public String toString() {
-        return data.toString() + "\n" + fornecedor.toString() + notaFiscal + "\n";
+        
+        return new SimpleDateFormat("dd/mm/yyyy").format(data) + "\n" + fornecedor.toString(false) + notaFiscal + "\n";
     }
     
     

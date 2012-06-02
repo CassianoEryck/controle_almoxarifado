@@ -47,12 +47,17 @@ public class Fornecedor {
         this.telefone = telefone;
     }
 
+    @Override
+    public String toString() {
+        return toString(true);
+    }
     
     /**
      * Retornar o fornecedor como uma String
      * @param listaProdutos se true, vai retornar todos os arquivos da lista.
      * @return 
      */
+    
     public String toString(boolean listaProdutos) {
         if (listaProdutos)
             return nome.toString() + "\n" + telefone.toString() + "\n" + this.produtos.percorreLista();

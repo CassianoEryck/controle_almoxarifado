@@ -21,6 +21,10 @@ public class ControlCarregaArquivos {
     
     File file;
     
+    public ControlCarregaArquivos(File file){
+        this.file = file;
+    }
+    
     public ControlCarregaArquivos(Arquivo arquivo){
         switch (arquivo){
             case PRODUTO: 

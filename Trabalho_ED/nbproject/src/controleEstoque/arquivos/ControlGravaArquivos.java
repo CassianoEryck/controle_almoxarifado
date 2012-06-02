@@ -21,6 +21,7 @@ public class ControlGravaArquivos {
     static ControlCarregaArquivos controlCarregaArquivos;
 
     File file;
+    File dir;
     EntradaProduto entradaProduto;
     SaidaProduto saidaProduto;
     
@@ -33,23 +34,27 @@ public class ControlGravaArquivos {
         switch (nomeArquivo){
             case PRODUTO: 
                 this.file = new File("produto.txt");
+                this.dir = new File("Produtos");
             break;
             case FUNCIONARIO:
                 this.file = new File("funcionario.txt");
+                this.dir = new File("Funcionarios");
             break; 
             case LOGIN:
-                this.file = new File("login.txt");
+                this.file = new File("login.txt");                
             break; 
         }
     }
     
     /**
      * Cria um arquivo com a entrada de um produto
+     * Primeiro ele cria o diretório(caso não exista) EntradaProdutos e o arquivo entradaProdutos+ idProduto + .txt 
      * @param entradaProduto Classe EntradaProduto para registrar uma entrada de um produto
      * @param id Id do produto correspondente a saida
      */
     public ControlGravaArquivos(EntradaProduto entradaProduto, int id) {
-        this.file = new File("entradaProduto" + Integer.toString(id) + ".txt");  
+        this.dir = new File("Produtos/EntradaProdutos");       
+        this.file = new File("Produtos/EntradaProdutos/entradaProduto" + Integer.toString(id) + ".txt");  
         this.entradaProduto = entradaProduto;
         gravaRegistroProduto(entradaProduto);
     }
@@ -67,8 +72,12 @@ public class ControlGravaArquivos {
     
     public void gravaRegistroProduto(EntradaProduto entradaProduto){
         String strAnterior = "";
-        if(!file.exists())
-            strAnterior = controlCarregaArquivos.retornaStringArquivo(file.getPath());            
+        if(!dir.exists()){
+           dir.mkdirs();
+        }else{
+            if(file.exists())                
+                strAnterior = new ControlCarregaArquivos(file).retornaStringArquivo(file.getPath());    
+        }                
         gravaRegistroProduto(strAnterior);
     }
     
@@ -81,7 +90,7 @@ public class ControlGravaArquivos {
     
     private void gravaRegistroProduto(String arquivoAnterior){
         String arquivo = "";
-        if(arquivoAnterior != null){
+        if(arquivoAnterior != "" || arquivoAnterior != null){
             arquivo = arquivoAnterior;
         }
         
