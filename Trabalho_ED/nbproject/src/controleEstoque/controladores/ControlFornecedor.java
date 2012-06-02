@@ -1,5 +1,6 @@
 package controleEstoque.controladores;
 
+import controleEstoque.entidades.Fornecedor;
 import controleEstoque.formularios.FmrAdicionaFornecedor;
 import javax.swing.JFrame;
 
@@ -21,6 +22,10 @@ public class ControlFornecedor {
         frmAdicionaFornecedor.setLocationRelativeTo(null);
         frmAdicionaFornecedor.setVisible(true);
         frmAdicionaFornecedor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    
+    private void chamaTelaFornecedor(Fornecedor forn){
+        
     }
     
     
