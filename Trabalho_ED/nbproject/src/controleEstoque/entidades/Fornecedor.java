@@ -62,7 +62,7 @@ public class Fornecedor {
         if (listaProdutos)
             return nome.toString() + "\n" + telefone.toString() + "\n" + this.produtos.percorreLista();
         else
-            return nome.toString() + "\n" + telefone.toString() + "\n";
+            return nome.toString() + "\n" + telefone.toString();
         
     }
     

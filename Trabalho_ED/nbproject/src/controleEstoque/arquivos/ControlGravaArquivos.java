@@ -93,7 +93,7 @@ public class ControlGravaArquivos {
      */
     public void gravaRegistroProduto(EntradaProduto entradaProduto){
         String strAnterior = carregaArquivoAnterior();                     
-        gravaRegistroProduto(strAnterior);
+        gravaRegistroProduto(strAnterior, entradaProduto);
     }
     
     
@@ -104,16 +104,16 @@ public class ControlGravaArquivos {
      */
     public void gravaRegistroProduto(SaidaProduto saidaProduto){
         String strAnterior = carregaArquivoAnterior();              
-        gravaRegistroProduto(strAnterior);
+        gravaRegistroProduto(strAnterior, saidaProduto);
     }
     
-    private void gravaRegistroProduto(String arquivoAnterior){
+    private void gravaRegistroProduto(String arquivoAnterior, Object objeto){
         String arquivo = "";
         if(arquivoAnterior != "" && arquivoAnterior != null){
             arquivo = arquivoAnterior;
         }
         
-        arquivo += this.saidaProduto.toString();
+        arquivo += objeto.toString();
         
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));

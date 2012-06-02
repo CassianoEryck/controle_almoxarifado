@@ -1,14 +1,17 @@
 package controleEstoque.arquivos;
 
+import controleEstoque.entidades.EntradaProduto;
 import controleEstoque.entidades.Fornecedor;
 import controleEstoque.entidades.Produto;
+import controleEstoque.entidades.SaidaProduto;
 import controleEstoque.estruturaDados.ListaFornecedor;
 import controleEstoque.estruturaDados.No;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class ControlRelatorios {    
    
@@ -62,9 +65,77 @@ public class ControlRelatorios {
     
     }
     
-    public String relatorioProdutos(){
+    public String relatorioProdutos(Produto produto, EntradaProduto entradaProduto){
+        File arquivoProduto = new File("Produtos/EntradaProdutos/entradaProduto" + Integer.toString(produto.getId())+".txt");
+        File arquivoRelatorio = new File("Produtos/EntradaProdutos/Relatorio_" + produto.getNome() + ".txt");
+        if(arquivoProduto.exists()){            
+            try {
+                BufferedWriter writer = new BufferedWriter(new FileWriter(arquivoRelatorio));
+                writer.write("--- Relatório Entrada Produto ----------");
+                writer.newLine();
+                writer.write("Produto: " + produto.getNome());
+                writer.newLine();
+                writer.write("---------- Entradas --------------------");
+                writer.write(leArquivo(arquivoProduto));
+                writer.write("----------------------------------------");
+                writer.newLine();
+                writer.write("Total: " + Integer.toString(0));
+                writer.newLine();
+                writer.write("Data: " + new SimpleDateFormat("dd/mm/yyyy").format(new Date()));
+                writer.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+           
+            
+            
+        }
+        return leArquivo(arquivoRelatorio);
+    }
+    
+    public String leArquivo(File arquivoProduto){
+        String strRetorno = "";        
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(arquivoProduto));
+            String strReader = reader.readLine();
+            
+            int i = 0;            
+            while(strReader != null){
+                switch (i){
+                    case 0:
+                        strRetorno += "Data: " + strReader;
+                    break;
+                    case 1:
+                        strRetorno += "Fornecedor: " + strReader;
+                    break;
+                    case 2:
+                        strRetorno += "Telefone: " + strReader;
+                    break;
+                    case 3:
+                        i = 0;
+                    break;
+                }
+                strRetorno += "\n";
+                strReader = reader.readLine();
+                    
+            }
+            reader.close();
+        } catch (Exception ex) {
+            Logger.getLogger(ControlRelatorios.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+                
+        return strRetorno;
+    }
+    
+    
+    public String relatorioProdutos(Produto produto, SaidaProduto saidaProduto){
         return "";
     }
+    
+    
+    
+    
     
     public String relatorioConsumoFuncionario(){
         return "";
