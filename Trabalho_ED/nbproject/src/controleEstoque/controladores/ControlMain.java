@@ -87,18 +87,7 @@ public class ControlMain {
          frmDetalhesProduto frmDetalhes = new frmDetalhesProduto();
          
          frmDetalhes.setVisible(true);
-     }
-     
-     public void chamaAdicionarFornecedores(FrmMenuPrincipal menu) {
-         FmrAdicionaFornecedor fornecedor = new FmrAdicionaFornecedor();
-         
-         menu.getJDesktopPane().removeAll();
-         menu.getJDesktopPane().add(fornecedor);
- 
-         fornecedor.setSize(menu.getJDesktopPane().getWidth(),
-                 menu.getJDesktopPane().getHeight());
-         
-         fornecedor.setVisible(true);
-     }
+     }     
+    
      
 }
