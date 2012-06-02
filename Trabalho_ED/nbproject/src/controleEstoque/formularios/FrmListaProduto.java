@@ -6,7 +6,10 @@ package controleEstoque.formularios;
 
 import controleEstoque.controladores.ControlMain;
 import controleEstoque.estruturaDados.ListaProdutos;
+import controleEstoque.tabelas.TabelaProduto;
 import javax.swing.JList;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Christopher
@@ -17,11 +20,7 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
     ListaProdutos listaProdutos;
     
     public FrmListaProduto() {
-        initComponents();
-    }
-
-    public JList getLstProdutos() {
-        return lstProdutos;
+       initComponents();
     }
 
     /**
@@ -39,8 +38,8 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
         btnAdicionarProduto = new javax.swing.JButton();
         btnIndicarProduto = new javax.swing.JButton();
         btnProdutosPendentes = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        lstProdutos = new javax.swing.JList();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblProdutos = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(730, 380));
         getContentPane().setLayout(null);
@@ -80,16 +79,19 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
         getContentPane().add(btnProdutosPendentes);
         btnProdutosPendentes.setBounds(540, 70, 150, 23);
 
-        listaProdutos = new ListaProdutos();
-        lstProdutos.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = listaProdutos.percorreListaArray();
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(lstProdutos);
+        tblProdutos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(70, 110, 560, 120);
+            },
+            new String [] {
+
+            }
+        ));
+        this.atualizaTabela();
+        jScrollPane1.setViewportView(tblProdutos);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(100, 110, 520, 140);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -102,6 +104,13 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
        
     }//GEN-LAST:event_btnAdicionarProdutoActionPerformed
 
+private void atualizaTabela() {
+    TabelaProduto tp = new TabelaProduto();
+    DefaultTableModel modelo = new DefaultTableModel(tp.getCelulas(), tp.getNomeColunas());
+    
+    tblProdutos.setModel(modelo);
+}
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarProduto;
@@ -109,8 +118,8 @@ public class FrmListaProduto extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnIndicarProduto;
     private javax.swing.JButton btnProdutosPendentes;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JList lstProdutos;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblProdutos;
     private javax.swing.JTextField txtPesquisaProduto1;
     // End of variables declaration//GEN-END:variables
 }

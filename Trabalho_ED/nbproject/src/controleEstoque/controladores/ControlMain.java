@@ -83,10 +83,4 @@ public class ControlMain {
          
          fornecedor.setVisible(true);
      }
-
-     public void criaDetalhesProduto () {
-         frmDetalhesProduto frmDetalhes = new frmDetalhesProduto();
-         
-         frmDetalhes.setVisible(true);
-     }
 }

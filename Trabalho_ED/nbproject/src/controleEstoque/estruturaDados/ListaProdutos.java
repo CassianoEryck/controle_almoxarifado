@@ -7,6 +7,12 @@ import controleEstoque.entidades.Produto;
 public class ListaProdutos {
     
     No inicio;
+
+    public No getInicio() {
+        return inicio;
+    }
+    
+    
     
     public ListaProdutos(){
         inicio = null;
@@ -95,22 +101,10 @@ public class ListaProdutos {
         
         return lista;
     }
-
-    public int getTamanhoLista () {
-        No aux = inicio; 
-        int tamanho = 0;
-        
-        while (aux != null) {
-            aux = aux.getProx();
-            tamanho++;
-        }
-        
-        return tamanho;
-    }
     
     public String[] percorreListaArray(){
         
-        String[] lista = new String[this.getTamanhoLista()];
+        String[] lista = new String[this.count()];
         No aux = inicio;
        
         int i = 0;
