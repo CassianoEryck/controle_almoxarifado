@@ -1,8 +1,10 @@
 package controleEstoque.arquivos;
 
 import controleEstoque.entidades.EntradaProduto;
+import controleEstoque.entidades.Fornecedor;
 import controleEstoque.entidades.Produto;
 import controleEstoque.entidades.SaidaProduto;
+import controleEstoque.estruturaDados.ListaFornecedor;
 import controleEstoque.estruturaDados.ListaProdutos;
 import controleEstoque.estruturaDados.No;
 import java.io.BufferedWriter;
@@ -47,6 +49,10 @@ public class ControlGravaArquivos {
                 this.file = new File("Login/login.txt");
                 this.dir = new File("Login");
             break; 
+            case FORNECEDOR:
+                this.file = new File("Fornecedor/fornecedor.txt");
+                this.dir = new File("Fornecedor");
+                    
         }
         verificaDiretorio(file, dir);
     }
@@ -54,6 +60,12 @@ public class ControlGravaArquivos {
     private void verificaDiretorio(File file, File dir){
         if(!dir.exists())
             dir.mkdirs();
+        if(!file.exists())
+            try {
+            file.createNewFile();
+        } catch (IOException ex) {
+            Logger.getLogger(ControlGravaArquivos.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     /**
@@ -156,6 +168,31 @@ public class ControlGravaArquivos {
                 produto = (Produto) aux.getObjeto();
 
                 escreveNoArquivo(writer, produto.toString());
+
+                aux = aux.getProx();
+            }
+            
+            writer.close();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.toString());            
+        }
+       
+      
+    }
+    
+    public void criaArquivoFornecedor(ListaFornecedor fornecedor){       
+       Fornecedor forn;     
+       
+       try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            No aux;
+            aux = fornecedor.getLista();
+            
+            while(aux != null){
+           
+                forn = (Fornecedor) aux.getObjeto();
+
+                escreveNoArquivo(writer, fornecedor.toString());
 
                 aux = aux.getProx();
             }

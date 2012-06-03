@@ -1,5 +1,7 @@
 package controleEstoque.controladores;
 
+import controleEstoque.arquivos.Arquivo;
+import controleEstoque.arquivos.ControlGravaArquivos;
 import controleEstoque.entidades.Fornecedor;
 import controleEstoque.estruturaDados.ListaFornecedor;
 import controleEstoque.estruturaDados.No;
@@ -59,6 +61,11 @@ public class ControlFornecedor {
         listaFornecedor.adiciona(fornecedor);
     }
     
+    private void criaArquivoFornecedor(){
+        ControlGravaArquivos controlGravaArquivos = new ControlGravaArquivos(Arquivo.FUNCIONARIO);
+        controlGravaArquivos.criaArquivoFornecedor(listaFornecedor);
+        
+    }
     
 
 }

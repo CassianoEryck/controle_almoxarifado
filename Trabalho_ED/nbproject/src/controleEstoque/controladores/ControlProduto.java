@@ -42,39 +42,44 @@ public class ControlProduto {
             while(strReader != null){
                 
                 switch (i){
-                    case 0:
-                        produto.setId(Integer.parseInt(strReader));
-                    break;
-                    case 1:
-                        produto.setDescricao(strReader);
-                    break;    
-                    case 2:
-                        produto.setValorUnitario(Double.parseDouble(strReader));
-                    break;    
-                    case 3:
-                        estoque.setQuantidade(Integer.parseInt(strReader));
-                    break;    
-                    case 5:
-                        estatistica.setVendaMediaMensal(Double.parseDouble(strReader));
-                    break;    
-                        
-                    case 6:
-                        estatistica.setTempoCobertura(Double.parseDouble(strReader));
-                    break;    
-                        
-                    case 7:
-                        estatistica.setEstoqueMinimo(Integer.parseInt(strReader));
-                    break;    
-                        
-                    case 8:
-                        estatistica.setEstoqueMaximo(Integer.parseInt(strReader));
-                    break;    
-                        
-                }
-                
-               
-                i++;
-                if(i == 8){
+                        case 0:                            
+                            produto.setId(Integer.parseInt(strReader));                           
+                        break;
+                            
+                        case 1:                            
+                            produto.setNome(strReader);                           
+                        break;
+                            
+                        case 2:
+                           produto.setDescricao(strReader);                                                   
+                        break;
+                            
+                        case 3:
+                            produto.setValorUnitario(Double.parseDouble(strReader)); 
+                        break;
+                            
+                        case 5:
+                            estatistica.setVendaMediaMensal(Double.parseDouble(strReader));
+                        break;   
+                            
+                        case 6:
+                            estatistica.setTempoCobertura(Double.parseDouble(strReader));
+                        break;   
+                            
+                        case 7:
+                            estatistica.setEstoqueMinimo(Integer.parseInt(strReader));
+                        break;   
+                            
+                        case 8:
+                            estatistica.setEstoqueMaximo(Integer.parseInt(strReader));                                                       
+                        break;                               
+                            
+                       case 4:
+                            estoque.setQuantidade(Integer.parseInt(strReader));
+                        break;        
+                    }
+                  i++;
+                  if(i == 9){
                     i = 0;
                     estoque.setEstatistica(estatistica);
                     produto.setEstoque(estoque);                    

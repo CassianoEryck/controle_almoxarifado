@@ -137,6 +137,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        return Integer.toString(id) + "\n" + descricao + "\n" + Double.toString(valorUnitario) + "\n" + estoque.toString();
+        return Integer.toString(id) + "\n" + nome + "\n" + descricao + "\n" + Double.toString(valorUnitario) + "\n" + estoque.toString();
     }
 }

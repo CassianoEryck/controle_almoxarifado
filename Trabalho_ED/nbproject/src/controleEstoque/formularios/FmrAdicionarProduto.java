@@ -270,10 +270,18 @@ public class FmrAdicionarProduto extends javax.swing.JFrame {
         
         controlProduto.adicionaProduto(produto);
         controlEntrada.registraEntrada(entradaProduto, produto.getId());
-        
+        limpaCampos();
         JOptionPane.showMessageDialog(rootPane, "Cadastrado com sucesso!");
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void limpaCampos(){
+        txtID.setText("");
+        txtNotaFiscal.setText("");
+        txtDescricao.setText("");
+        txtNome.setText("");
+        txtValorUnitario.setText("");
+        txtQuantidade.setText("");
+    }
     /**
      * @param args the command line arguments
      */

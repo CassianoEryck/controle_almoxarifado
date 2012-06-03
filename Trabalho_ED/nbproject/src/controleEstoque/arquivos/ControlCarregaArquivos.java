@@ -79,36 +79,40 @@ public class ControlCarregaArquivos {
                             produto.setId(Integer.parseInt(strReader));                           
                         break;
                             
-                        case 1:
-                           produto.setDescricao(strReader);                                                   
+                        case 1:                            
+                            produto.setNome(strReader);                           
                         break;
                             
                         case 2:
-                            produto.setValorUnitario(Double.parseDouble(strReader)); 
+                           produto.setDescricao(strReader);                                                   
                         break;
                             
                         case 3:
+                            produto.setValorUnitario(Double.parseDouble(strReader)); 
+                        break;
+                            
+                        case 4:
                             estatistica.setVendaMediaMensal(Double.parseDouble(strReader));
                         break;   
                             
-                        case 4:
+                        case 5:
                             estatistica.setTempoCobertura(Double.parseDouble(strReader));
                         break;   
                             
-                        case 5:
+                        case 6:
                             estatistica.setEstoqueMinimo(Integer.parseInt(strReader));
                         break;   
                             
-                        case 6:
+                        case 7:
                             estatistica.setEstoqueMaximo(Integer.parseInt(strReader));                                                       
                         break;                               
                             
-                       case 7:
+                       case 8:
                             estoque.setQuantidade(Integer.parseInt(strReader));
                         break;        
                     }
                   i++;
-                  if(i == 8){
+                  if(i == 9){
                       estoque.setEstatistica(estatistica);
                       produto.setEstoque(estoque);
                       lista.adiciona(produto);
