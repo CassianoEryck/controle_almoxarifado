@@ -1,4 +1,4 @@
 package controleEstoque.arquivos;
 public enum Arquivo {
-    PRODUTO, FUNCIONARIO, LOGIN
+    PRODUTO, FUNCIONARIO, LOGIN, FORNECEDOR
 }

@@ -60,7 +60,7 @@ public class EntradaProduto {
     @Override
     public String toString() {
         
-        return new SimpleDateFormat("dd/mm/yyyy").format(data) + "\n" + fornecedor.toString(false) + notaFiscal + "\n";
+        return new SimpleDateFormat("dd/MM/yyyy").format(data) + "\n" + fornecedor.toString(false) + notaFiscal + "\n";
     }
     
     

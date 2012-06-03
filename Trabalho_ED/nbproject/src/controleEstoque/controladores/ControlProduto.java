@@ -6,6 +6,7 @@ import controleEstoque.entidades.Estatisticas;
 import controleEstoque.entidades.Estoque;
 import controleEstoque.entidades.Produto;
 import controleEstoque.estruturaDados.ListaProdutos;
+import controleEstoque.estruturaDados.MergeSort;
 import controleEstoque.formularios.frmIndicarCompra;
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,7 +20,12 @@ import javax.swing.JOptionPane;
 public class ControlProduto {
     
     ListaProdutos listaProdutos = new ListaProdutos();
-    ControlGravaArquivos controlArquivosTexto = new ControlGravaArquivos(Arquivo.PRODUTO);    
+    ControlGravaArquivos controlArquivosTexto = new ControlGravaArquivos(Arquivo.PRODUTO);
+
+    public ControlProduto() {
+        criaLista();
+    }
+    
     
     public File leArquivo(){
         return controlArquivosTexto.leArquivo();
@@ -77,7 +83,7 @@ public class ControlProduto {
                 strReader = reader.readLine();                
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.toString());
+            JOptionPane.showMessageDialog(null, e.toString() + "Erro ao carregar a lista de produtos" + e.getLocalizedMessage());
         }
         
      
@@ -94,6 +100,15 @@ public class ControlProduto {
         
         p.indicarProduto(frmIndicarCompra.getTxtNome().getText(),
                 (String) frmIndicarCompra.getCmbFornecedor().getSelectedItem());
+    }
+    
+    public void adicionaProduto(Produto produto){
+        listaProdutos.adiciona(produto);
+        MergeSort mergeSort = new MergeSort(listaProdutos);
+        listaProdutos = mergeSort.mergeProdutos();
+        controlArquivosTexto.criaArquivoProduto(listaProdutos);
+        criaLista();       
+        
     }
 
 }

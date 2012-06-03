@@ -2,7 +2,7 @@
 
 <Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="cc" green="66" red="ff" type="rgb"/>
     </Property>
@@ -56,14 +56,14 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="126" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Fornecedores" alignment="0" pref="191" max="32767" attributes="1"/>
+                      <Component id="Fornecedores" alignment="0" max="32767" attributes="1"/>
                       <Component id="ConsumoFuncionarioMensal" alignment="0" max="32767" attributes="1"/>
-                      <Component id="ProdutoSeremComprados" alignment="0" pref="191" max="32767" attributes="1"/>
+                      <Component id="ProdutoSeremComprados" alignment="0" max="32767" attributes="1"/>
                   </Group>
                   <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
               </Group>
@@ -124,10 +124,10 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="GerarRelatorio" alignment="1" pref="139" max="32767" attributes="1"/>
-                      <Component id="ListaProduto" alignment="1" pref="139" max="32767" attributes="1"/>
-                      <Component id="RegistraEntrada" alignment="1" pref="139" max="32767" attributes="1"/>
-                      <Component id="RegistraSaida" alignment="1" pref="139" max="32767" attributes="1"/>
+                      <Component id="GerarRelatorio" alignment="1" max="32767" attributes="1"/>
+                      <Component id="ListaProduto" alignment="1" max="32767" attributes="1"/>
+                      <Component id="RegistraEntrada" alignment="1" max="32767" attributes="1"/>
+                      <Component id="RegistraSaida" alignment="1" max="32767" attributes="1"/>
                       <Component id="ListaFornecedor" alignment="0" min="-2" max="-2" attributes="1"/>
                   </Group>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
@@ -135,7 +135,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="EfetuarLogout" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="41" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

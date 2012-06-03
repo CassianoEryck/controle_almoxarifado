@@ -4,6 +4,7 @@ import controleEstoque.entidades.EntradaProduto;
 import controleEstoque.entidades.Produto;
 import controleEstoque.entidades.SaidaProduto;
 import controleEstoque.estruturaDados.ListaProdutos;
+import controleEstoque.estruturaDados.No;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -35,18 +36,24 @@ public class ControlGravaArquivos {
     public ControlGravaArquivos(Arquivo nomeArquivo) {
         switch (nomeArquivo){
             case PRODUTO: 
-                this.file = new File("produto.txt");
+                this.file = new File("Produtos/produto.txt");
                 this.dir = new File("Produtos");
             break;
             case FUNCIONARIO:
-                this.file = new File("funcionario.txt");
+                this.file = new File("Funcionario/funcionario.txt");
                 this.dir = new File("Funcionarios");
             break; 
             case LOGIN:
-                this.file = new File("login.txt");
+                this.file = new File("Login/login.txt");
                 this.dir = new File("Login");
             break; 
         }
+        verificaDiretorio(file, dir);
+    }
+    
+    private void verificaDiretorio(File file, File dir){
+        if(!dir.exists())
+            dir.mkdirs();
     }
     
     /**
@@ -141,14 +148,16 @@ public class ControlGravaArquivos {
        
        try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            No aux;
+            aux = produtos.getLista();
             
-            while(produtos.getLista().getProx() != null){
+            while(aux != null){
            
-            produto = (Produto) produtos.getLista().getObjeto();
-                       
-            escreveNoArquivo(writer, produto.toString());
-            
-            produtos.setLista(produtos.getLista().getProx());
+                produto = (Produto) aux.getObjeto();
+
+                escreveNoArquivo(writer, produto.toString());
+
+                aux = aux.getProx();
             }
             
             writer.close();
